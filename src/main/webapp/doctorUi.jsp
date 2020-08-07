@@ -186,7 +186,7 @@
                        </div>
                        <div class="form-group">
                            <label for="sex">Sex:</label>
-                          <input class="form-control dSex" type="text" name="qualification" id="qualification" placeholder="Qualification">     
+                          <input class="form-control dSex" type="text" name="sex" id="sex" placeholder="Qualification">     
                        </div>        
                        <div class="form-group">
                            <label for="specialization">Specialization:</label>
@@ -212,6 +212,11 @@
       </div>
            <div class="appointmentContainer">
                <div class="appointmentContent">
+                   
+               </div>
+           </div>
+           <div class="myPatientContainer">
+               <div class="myPatientContent">
                    
                </div>
            </div>
@@ -265,6 +270,8 @@
                $(".appointmentContainer").css("display","none");
                $(".menuHeaderContent").html("Your Profile");
                $(".menuHeaderContent").css("font-size","20px");
+               $(".myPatientContainer").css("display","none");
+               
             });
             $(".HomeLink").on("click",function(){
                $(".profileContainer").css("display","none"); 
@@ -272,6 +279,8 @@
                $(".appointmentContainer").css("display","none");
                $(".menuHeaderContent").html("Doctor Platform");
                $(".menuHeaderContent").css("font-size","20px");
+               $(".myPatientContainer").css("display","none");
+               
            });
             $(".profileContainer").on("click",function(){
                $(".menuList").animate({
@@ -558,14 +567,19 @@
                    $(".cardDecker").css("display","none");
                    $(".appointmentContainer").css("display","block");
                    $(".appointmentContent").html("");
+                   $(".myPatientContainer").css("display","none");
+
                    $.ajax({
                        type:"POST",
                        url:"doctorAppointmentController",
                        data:{
-                           email:email
+                           email:email,
+                           function:"request"
                        },
                        success: function (data, textStatus, jqXHR) {
 //                           alert(data);
+                           if(data.includes("|"))
+                           { 
                            patientDetailArray=data.split("|");
                            newRequest=patientDetailArray[patientDetailArray.length-1];
                           for(var x=0;x< patientDetailArray.length-1;x++)
@@ -621,10 +635,108 @@
                           {
                              $(".patientImage"+x).attr("src","./pateintimageRetriver?email="+patientImageArray[x]+"&role=patient");
                           }
+                      }
+                      else
+                      {
+                          $(".appointmentContent").html("Sorry there is no appointment");
+                      }
                      }
                        
                   });
                });
+               
+                var patientImageArray1=new Array();
+                var patientDetailArray1=new Array();
+               var AppointmentDetailArray1=new Array();
+               $(".patientLink").on("click",function(){
+                   $(".profileContainer").css("display","none");
+                   $(".cardDecker").css("display","none");
+                   $(".appointmentContainer").css("display","none");
+                   $(".myPatientContainer").css("display","block");
+                   $(".appointmentContent").html("");
+                   $(".myPatientContent").html("");
+                   $.ajax({
+                       type:"POST",
+                       url:"doctorAppointmentController",
+                       data:{
+                           email:email,
+                           function:"confirmed"
+                       },
+                       success: function (data, textStatus, jqXHR) {
+//                           alert(data);
+                           if(data.includes("|"))
+                           {
+                           patientDetailArray1=data.split("|");
+                          for(var x=0;x< patientDetailArray1.length-1;x++)
+                          {                               AppointmentDetailArray1=patientDetailArray1[x].split(",");
+                              patientImageArray1.push(AppointmentDetailArray1[1]);
+                              $(".myPatientContent").append(
+                              "<div class='appointmentDividingContainer1' id='box"+AppointmentDetailArray1[5]+"'>\n\
+                                   <div class='appointmentMainContainer1'>\n\
+                                        <div class='.patientImageContainer1'>\n\
+                                             <img class='patientImage1"+x+" patImage' src=''> \n\
+                                                  \n\
+                                        </div>\n\
+                                        <div class='patientDetailContainer1'> \n\
+                                               <h4>Patient Request For Appointment</h4>               \n\
+                                               <p>Patient Name : "+AppointmentDetailArray1[0]+"</p>\n\
+                                               <p>Patient Email : "+AppointmentDetailArray1[1]+"</p>  \n\
+                                               <p>Patient Phone Number : "+AppointmentDetailArray1[2]+"</p>\n\
+                                               <p>Patient Address : "+AppointmentDetailArray1[3]+"</p> \n\
+                                               <p>Patient Place Name : "+AppointmentDetailArray1[4]+"</p>     \n\
+                                       \n\
+                                        </div > \n\
+                                          <div class='patientDetailContainer1'>\n\
+                                               <p>Appointment Date : "+AppointmentDetailArray1[6]+"</p>   \n\
+                                               <p>Appointment Reason : "+AppointmentDetailArray1[7]+"</p>   \n\
+                                               <p>Appointment Time : "+AppointmentDetailArray1[8]+"</p>   \n\
+                                               <p>Appointment Confirmation : "+AppointmentDetailArray1[9]+"</p>   \n\
+\n\
+                                          </div>     \n\
+                                       \n\
+                                         <div class='appointmentFixingContainer1 updaterContainer'> \n\
+                                                <div class='alert alert-success updateMessage"+AppointmentDetailArray1[5]+"'> \n\
+                                                    Successfully Updated the Appointment    \n\
+                                                </div>   \n\
+                                                <div class='form-group'>\n\
+                                                      <label>Appointment Date : </label>\n\
+                                                      <input type='date' class='form-control' id='AppointmentDate"+AppointmentDetailArray1[5]+"' name='AppointmentDate"+AppointmentDetailArray1[5]+"' placeholder='Appointment Date' required>       \n\
+                                                </div>\n\
+                                                <div class='form-group'>\n\
+                                                      <label>Appointment Time : </label>\n\
+                                                      <input type='time' class='form-control' id='AppointmentTime"+AppointmentDetailArray1[5]+"' name='AppointmentTime"+AppointmentDetailArray1[5]+"' placeholder='Appointment Time' required>       \n\
+                                                </div>\n\
+                                                 <div class='form-group'>\n\
+                                                      <label>Appointment Confirmation : </label>\n\
+                                                      <input type='text'  class='form-control' id='AppointmentConfirmation1"+AppointmentDetailArray1[5]+"' name='AppointmentConfirmation1"+AppointmentDetailArray1[5]+"' placeholder='Yes/No' required>       \n\
+                                                </div>\n\
+                                                <div class='updaterDecider'> \n\
+                                                      <button class='btn btn-primary updaterDeciderButtton' id='"+AppointmentDetailArray1[5]+"'>Update </button> \n\
+                                                </div>                              \n\
+                             \n\
+                                         </div> \n\
+                                            <div class='decidingContainer'>  \n\
+                                              <button class='btn btn-primary updaterButton' id='"+AppointmentDetailArray1[5]+"'>Update</button>  \n\
+                                              <button class='btn btn-danger cancel' id='"+AppointmentDetailArray1[5]+"'>Remove</button>      \n\
+                                            </div>      \n\
+                                     </div>\n\
+                               </div>     \n\ "
+                                     
+                              );
+                          }
+                          for(var x=0;x<patientImageArray1.length;x++)
+                          {
+                             $(".patientImage1"+x).attr("src","./pateintimageRetriver?email="+patientImageArray1[x]+"&role=patient");
+                          }
+                      }
+                      else
+                      {
+                          $(".myPatientContent").html("Sorry there is no appointment now");
+                      }
+                     }
+                       
+                  });
+               }); 
                var acceptId;
                $(document).on("click",".accept",function(){
                    acceptId=$(this).attr("id");
@@ -683,7 +795,7 @@
                   type:"POST",
                   url:"NotificationController",
                   data:{
-                  functoin:"notification",
+                  role:"doctor",
                   email:email    
                   },
                   success: function (data, textStatus, jqXHR) {
@@ -699,6 +811,34 @@
                 });
                },2000);
              });  
+             $(document).on("click",".updaterButton",function(){
+                      $('.updaterContainer').css("display","block");                
+             });
+             $(document).on("click",".updaterDeciderButtton",function(){
+                 var presId1=$(this).attr("id");
+                 var appDate1=$("#AppointmentDate"+presId1).val();
+                 var appTime1=$("#AppointmentTime"+presId1).val();
+                 var appConfirmation1=$("#AppointmentConfirmation1"+presId1).val();
+                 
+                 $.ajax({
+                    type:"POST",
+                    url:"AppointmentFixerandCancelerController",
+                    data:{
+                        presId:presId1,
+                        AppDate:appDate1,
+                        AppTime:appTime1,
+                        AppConfirmation:appConfirmation1,
+                        function:"update"
+                    },
+                    success: function (data, textStatus, jqXHR) {
+                        if(data==='true')
+                        {
+                            $(".updateMessage"+presId1).fadeIn(1000).css("display","block");
+                        }
+                    }
+                            
+                 });
+             });
                
         </script>
     </body>

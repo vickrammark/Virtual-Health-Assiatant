@@ -291,6 +291,7 @@ width:100%;
    flex-wrap:wrap;
    justify-content:space-around;
    align-items:center; 
+   width:100%; 
 }
 .appointmentDividingContainer,.appointmentDividingContainer1
 {
@@ -376,8 +377,23 @@ width:100%;
    font-size:20px;
    border-radius:15px;    
 }
+.myPatientContainer
+{
+    display:none;
+    width:100%;
+    height:100%;
+}
+.myPatientContent
+{
+   width:100%;
+   height:100%;
+}
 
-
+.appointmentContent,.myPatientContent
+{
+   text-align:center;
+   font-size:25px;  
+}
 @media only screen and (max-width: 600px) {
      .fromLeft
      {

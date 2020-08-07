@@ -12,14 +12,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     </head>
- <%
-              
-                String email=(String)session.getAttribute("message");
-                if(email.equals(""))
-                {
-                    response.sendRedirect("Login.jsp");
-                }
-            %>
+
     <body>
         <div class="nav">
               <nav class="navbar navbar-expand-sm mt-0" style="background-color:blueviolet">
@@ -36,7 +29,7 @@
                </ul>
               <div class="fromLeft">
                    <div class="nav-item">
-                       <a class="nav-link" href="Login.jsp" style="color: white;font-size:20px;font-weight:bold">LogOut</a>
+                       <a class="nav-link logOut" href="#" style="color: white;font-size:20px;font-weight:bold">LogOut</a>
                    </div>                   
                 </div>
           </nav>
@@ -352,17 +345,11 @@
                     </div>     
                 </div> 
           </div>
-         </div>       
+         </div> 
+       
         <script>
-                
-            $(".logOut").on("click",function(){
-                <%
-                    session.setAttribute("message","");
-                    session.invalidate();
-                    response.sendRedirect("Login.jsp");
-                %> 
-             });
-                var email=<%=email%>;
+         
+                var email=localStorage.getItem("email");
                 alert(email);
                 var left=$(document).width()/2; 
                 $(".update").css("left",left);
@@ -1278,7 +1265,7 @@
                             }
                         }
                         
-                    })
+                    });
                 });                    
         </script>
     </body>
