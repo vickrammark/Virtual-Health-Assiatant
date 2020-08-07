@@ -354,7 +354,7 @@
           </div>
          </div>       
         <script>
-                var email=localStorage.getItem("email");
+                
             $(".logOut").on("click",function(){
                 <%
                     session.setAttribute("message","");
@@ -362,7 +362,8 @@
                     response.sendRedirect("Login.jsp");
                 %> 
              });
-
+                var email=<%=email%>;
+                alert(email);
                 var left=$(document).width()/2; 
                 $(".update").css("left",left);
                 $(".imgProfile").attr("src","./pateintimageRetriver?email="+email+"&role=patient"); 
