@@ -10,6 +10,7 @@ import com.VirtusaProject.virtual_health_assistant.modal.cancelRequestModal;
 import com.VirtusaProject.virtual_health_assistant.modal.updaterModal;
 import com.VirtusaProject.virtual_health_assitant.dao.accpetRequestDao;
 import com.VirtusaProject.virtual_health_assitant.dao.cancelRequestDao;
+import com.VirtusaProject.virtual_health_assitant.dao.mailDao;
 import com.VirtusaProject.virtual_health_assitant.dao.updaterDao;
 import com.VirutsaProject.virtual_health_assistant.Setter.acceptRequestSetter;
 import com.VirutsaProject.virtual_health_assistant.Setter.cancelRequestSetter;
@@ -86,6 +87,19 @@ public class AppointmentFixerandCancelerController extends HttpServlet {
             }
             catch(Exception ex)
             {
+                out.println(ex.getMessage());
+            }
+            resp.setContentType("text/html");
+            resp.getWriter().write(result);
+        }
+        else if(function.equals("mail"))
+        {
+            String presId=req.getParameter("presId");
+            String role=req.getParameter("role");
+            mailDao md=new mailDao();
+            try {
+                result=md.getMailData(presId, role);
+            } catch (Exception ex) {
                 out.println(ex.getMessage());
             }
             resp.setContentType("text/html");

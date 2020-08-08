@@ -24,7 +24,7 @@ import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 @Stateless
 public class emailHelper {
-    public static String sendMail(String toEmail) throws AddressException, MessagingException
+    public static String sendMail(String toEmail,String Message1) throws AddressException, MessagingException
     {
         Properties prop=new Properties();
         prop.put("mail.smtp.host", "smtp.gmail.com");
@@ -41,7 +41,7 @@ public class emailHelper {
         message.setFrom(new InternetAddress("bunnydummy65@gmail.com"));  
         message.setRecipient(Message.RecipientType.TO, new InternetAddress(toEmail));
         BodyPart body=new MimeBodyPart();
-        body.setText("please click the link to reset your password \n"+"http://localhost:32571/mavenproject2/Reset.jsp");
+        body.setText(Message1);
         Multipart multipart=new MimeMultipart();
         multipart.addBodyPart(body);
         message.setContent(multipart);

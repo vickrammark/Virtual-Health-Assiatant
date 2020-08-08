@@ -757,7 +757,6 @@
                           function:"accept"
                       },
                       success: function (data, textStatus, jqXHR) {
-                          alert(data);
                         if(data==="true")
                        {  
                         $(".onSuccess").fadeIn(500).css("display","block").delay(1500).queue(function(next){
@@ -766,7 +765,8 @@
                              next();     
                              });
                              next();
-                        });   
+                        });
+                        getMailData(acceptId,"accept");
                        }
                       }
                        });
@@ -786,6 +786,7 @@
                           function:"cancel"
                       },
                       success: function (data, textStatus, jqXHR) {
+                          getMailData(cancelId,"cancel");
                      }
                   }); 
                });
@@ -835,11 +836,52 @@
                         {
                             $(".updateMessage"+presId1).fadeIn(1000).css("display","block");
                         }
+                        
                     }
                             
                  });
              });
-               
+                 function getMailData(presId1,status)
+                 {
+                     $.ajax({
+                         type:"POST",
+                    url:"AppointmentFixerandCancelerController",
+                    data:{
+                        presId:presId1,
+                        function:"mail",
+                        role:"doctor"
+                    },
+                    success: function (data, textStatus, jqXHR) {
+                        alert(data);
+                        var emailArray=new Array();
+                        emailArray=data.split(",");
+                        alert(emailArray);
+                        sendEmail(emailArray[0],status,emailArray[1],emailArray[2],"doctor",emailArray[3],emailArray[4],"Appointment");
+                     }
+                         });
+                 }
+
+                 function sendEmail( Email,status, patientName,doctorName,person,date,time,function1 )
+                 {
+                     alert(date);
+                     $.ajax({
+                         type:"POST",
+                         url:"emailSenderServlet",
+                         data:{
+                             Email:Email,
+                             status:status,
+                             patientName:patientName,
+                             doctorName:doctorName,
+                             person:person,
+                             date:date,
+                             time:time,
+                             function:function1
+                         },
+                         success: function (data, textStatus, jqXHR) {
+                           alert(data);
+                          }
+                     })
+                 }
         </script>
     </body>
 </html>

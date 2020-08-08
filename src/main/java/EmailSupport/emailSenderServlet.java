@@ -28,22 +28,74 @@ public class emailSenderServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
      
        PrintWriter out=resp.getWriter();
-       String Email=req.getParameter("Email");
+       
+       String function=req.getParameter("function");
+       
        emailHelper email=new emailHelper();
-       String status="";
+       if(function.equals("Appointment"))
+       {
+           
+       String Email=req.getParameter("Email");
+       String status=req.getParameter ("status");
+       String PName=req.getParameter("patientName");
+       String DName=req.getParameter("doctorName");
+       String person=req.getParameter("person");
+       String date=req.getParameter("date");
+       String time=req.getParameter("time");
+           String Message="";
+           String result="";
+       if(person.equals("doctor"))
+          {    
+           if(status.equals("accept"))
+           {
+               Message="Hey "+DName+" your meeting with "+PName+" has been scheduled on "+date+","+time ;                    
+           }
+           else
+           {
+               Message="Hey "+DName+" your meeting with "+PName+" has been canceld which might have held on "+date+","+time ;
+           }
+          }
+          else
+          {
+           if(status.equals("accept"))
+           {
+               Message="Hey "+PName+" your meeting with "+DName+" has been scheduled on"+date+","+time ;                    
+           }
+           else
+           {
+               Message="Hey "+PName+" your meeting with "+DName+" has been canceld which might have held on"+date+","+time ;
+           }    
+           
+          }
+           try {
+              result=email.sendMail(Email,Message);
+           } catch (Exception ex) {
+              out.println(ex.getMessage());
+           }
+           resp.setContentType("text/html");
+           
+           resp.getWriter().write(result);
+           
+       }
+      else
+       {
+           
+       String Email=req.getParameter("Email");
+       String status1="";
+       String Message="\'please click the link to reset your password \\n\'+\'http://localhost:32571/mavenproject2/Reset.jsp\'";
         try {
-          String  result=email.sendMail(Email);
+          String  result=email.sendMail(Email,Message);
           if(result.equals("success"))
           {
-              status="true";
-              req.setAttribute("message",status);
+              status1="true";
+              req.setAttribute("message",status1);
               RequestDispatcher rd=req.getRequestDispatcher("forgetPassword.jsp");
               rd.forward(req, resp);
           }
           else
           {
-              status="false";
-              req.setAttribute("message",status);
+              status1="false";
+              req.setAttribute("message",status1);
               RequestDispatcher rd=req.getRequestDispatcher("forgetPassword.jsp");
               rd.forward(req, resp);
           }
@@ -53,4 +105,5 @@ public class emailSenderServlet extends HttpServlet {
     }
 
     
+}
 }
