@@ -778,6 +778,7 @@
                     $("#box"+cancelId).css("display","none");
                     next();     
                   });
+                  getMailData(cancelId,"cancel");
                    $.ajax({
                       type:"POST",
                       url:"AppointmentFixerandCancelerController",
@@ -786,7 +787,6 @@
                           function:"cancel"
                       },
                       success: function (data, textStatus, jqXHR) {
-                          getMailData(cancelId,"cancel");
                      }
                   }); 
                });
@@ -843,6 +843,7 @@
              });
                  function getMailData(presId1,status)
                  {
+                     alert(presId1);
                      $.ajax({
                          type:"POST",
                     url:"AppointmentFixerandCancelerController",
@@ -863,7 +864,7 @@
 
                  function sendEmail( Email,status, patientName,doctorName,person,date,time,function1 )
                  {
-                     alert(date);
+                     alert(date+"hiiii");
                      $.ajax({
                          type:"POST",
                          url:"emailSenderServlet",

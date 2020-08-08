@@ -52,7 +52,7 @@ public class emailSenderServlet extends HttpServlet {
            }
            else
            {
-               Message="Hey "+DName+" your meeting with "+PName+" has been canceld which might have held on "+date+","+time ;
+               Message="Hey "+DName+" your meeting with "+PName+" has been canceld";
            }
           }
           else
