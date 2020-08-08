@@ -61,9 +61,13 @@ public class emailSenderServlet extends HttpServlet {
            {
                Message="Hey "+PName+" your meeting with "+DName+" has been scheduled on"+date+","+time ;                    
            }
+           else if(status.equals("booking"))
+           {
+               Message="Hey "+PName+"your appointment request has been sent successfully";
+           }
            else
            {
-               Message="Hey "+PName+" your meeting with "+DName+" has been canceld which might have held on"+date+","+time ;
+               Message="Hey "+PName+" your meeting with "+DName+" has been canceld ";
            }    
            
           }

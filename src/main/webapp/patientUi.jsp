@@ -993,12 +993,26 @@
                          data:{
                              doctorId:did,
                              email:email,
-                             reason:specializationName
+                             reason:specializationName,
+                             function:"booking"
                          },
                          success: function (data, textStatus, jqXHR) {
                              if(data==="success")
                              {
                                  $(".modal-body p").html("Successfully Booked!!");
+                                 $.ajax({
+                                    type:"POST",
+                                    url:"bookingControlller",
+                                    data:{
+                                        doctorId:did,
+                                        email:email,
+                                        reason:specializationName,
+                                        function:"email"
+                                       },
+                                       success: function (data, textStatus, jqXHR) {
+                                         getMailData(data,"booking");
+                                       }
+                                   });
                              }
                              else
                              {
@@ -1021,7 +1035,7 @@
                          var docImageArray=new Array();
                          var docDeatailArray=new Array();
                          var appointmentDeatilArray=new Array();
-                         alert(email);
+                         
                          $.ajax({
                              type:"POST",
                              url:"appointmentController",
@@ -1118,7 +1132,7 @@
                            }
                          }
                       });  
-                    },60000);   
+                    },1000);   
                     $(".doctorLink").on("click",function(){
                         $(".appointmentContainer").css("display","none");
                          $(".profileContainer").css("display","none");
@@ -1227,6 +1241,7 @@
                     });
                 $(document).on("click",".RemoveButton1",function(){
                     var remove=$(".RemoveButton1").attr("id");
+                     getMailData(remove,"cancel");
                     $.ajax({
                         type:"POST",
                         url:"AppointmentFixerandCancelerController",
@@ -1248,6 +1263,7 @@
                 });
                    $(document).on("click",".RemoveButton",function(){
                     var remove=$(".RemoveButton").attr("id");
+                    getMailData(remove,"cancel");
                     $.ajax({
                         type:"POST",
                         url:"AppointmentFixerandCancelerController",
@@ -1266,7 +1282,45 @@
                         }
                         
                     });
-                });                    
+                }); 
+                 function getMailData(presId1,status)
+                 {
+                     $.ajax({
+                         type:"POST",
+                    url:"AppointmentFixerandCancelerController",
+                    data:{
+                        presId:presId1,
+                        function:"mail",
+                        role:"patient"
+                    },
+                    success: function (data, textStatus, jqXHR) {
+                        var emailArray=new Array();
+                        emailArray=data.split(",");
+                        sendEmail(emailArray[0],status,emailArray[1],emailArray[2],"doctor",emailArray[3],emailArray[4],"Appointment");
+                     }
+                   });
+                 }
+
+                 function sendEmail( Email,status, patientName,doctorName,person,date,time,function1 )
+                 {
+                     $.ajax({
+                         type:"POST",
+                         url:"emailSenderServlet",
+                         data:{
+                             Email:Email,
+                             status:status,
+                             patientName:patientName,
+                             doctorName:doctorName,
+                             person:person,
+                             date:date,
+                             time:time,
+                             function:function1
+                         },
+                         success: function (data, textStatus, jqXHR) {
+                           alert(data);
+                          }
+                     })
+                 }
         </script>
     </body>
 </html>

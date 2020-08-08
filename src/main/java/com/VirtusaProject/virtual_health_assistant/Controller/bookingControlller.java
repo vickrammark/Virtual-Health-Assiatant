@@ -31,8 +31,11 @@ public class bookingControlller extends HttpServlet {
             String docId=req.getParameter("doctorId");
             String email=req.getParameter("email");
             String reason=req.getParameter("reason");
-            bookingSetter bs=new bookingSetter();
+            String function=req.getParameter("function");
             PrintWriter out=resp.getWriter();
+        if(function.equals("booking"))
+        {   
+            bookingSetter bs=new bookingSetter();
             bookingModal bm=bs.setBooking(docId, email,reason);
             bookingDao bk=new bookingDao();
             String result="";
@@ -50,7 +53,19 @@ public class bookingControlller extends HttpServlet {
          {
           resp.getWriter().write("failed");
          }
-            
+        }
+        else
+        {
+            bookingDao bd=new bookingDao();
+            String result="";
+                try {
+                     result=bd.getEmailData(email, docId);
+                } catch (Exception ex) {
+                    out.println(ex.getMessage());
+                }
+                resp.setContentType("text/html");
+                resp.getWriter().write(result);
+        }
     }
  
 
