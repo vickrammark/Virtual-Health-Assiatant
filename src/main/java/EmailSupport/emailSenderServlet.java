@@ -30,11 +30,11 @@ public class emailSenderServlet extends HttpServlet {
        PrintWriter out=resp.getWriter();
        
        String function=req.getParameter("function");
-       
+       String heading="";
        emailHelper email=new emailHelper();
        if(function.equals("Appointment"))
        {
-           
+       heading="Appointment";    
        String Email=req.getParameter("Email");
        String status=req.getParameter ("status");
        String PName=req.getParameter("patientName");
@@ -52,27 +52,27 @@ public class emailSenderServlet extends HttpServlet {
            }
            else
            {
-               Message="Hey "+DName+" your meeting with "+PName+" has been canceld";
+               Message="Hey "+DName+" your meeting with "+PName+" has been canceled";
            }
           }
-          else
-          {
+       else if(person.equals("patient"))
+           {
            if(status.equals("accept"))
            {
                Message="Hey "+PName+" your meeting with "+DName+" has been scheduled on"+date+","+time ;                    
            }
            else if(status.equals("booking"))
            {
-               Message="Hey "+PName+"your appointment request has been sent successfully";
+               Message="Hey "+DName+" your appointment request has been sent successfully";
            }
            else
            {
-               Message="Hey "+PName+" your meeting with "+DName+" has been canceld ";
+               Message="Hey "+PName+" your meeting with "+DName+" has been canceled. ";
            }    
            
           }
            try {
-              result=email.sendMail(Email,Message);
+              result=email.sendMail(Email,Message,heading);
            } catch (Exception ex) {
               out.println(ex.getMessage());
            }
@@ -83,12 +83,12 @@ public class emailSenderServlet extends HttpServlet {
        }
       else
        {
-           
+         heading="Reset Link";  
        String Email=req.getParameter("Email");
        String status1="";
        String Message="\'please click the link to reset your password \\n\'+\'http://localhost:32571/mavenproject2/Reset.jsp\'";
         try {
-          String  result=email.sendMail(Email,Message);
+          String  result=email.sendMail(Email,Message,heading);
           if(result.equals("success"))
           {
               status1="true";

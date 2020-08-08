@@ -1296,7 +1296,7 @@
                     success: function (data, textStatus, jqXHR) {
                         var emailArray=new Array();
                         emailArray=data.split(",");
-                        sendEmail(emailArray[0],status,emailArray[1],emailArray[2],"doctor",emailArray[3],emailArray[4],"Appointment");
+                        sendEmail(emailArray[0],status,emailArray[1],emailArray[2],"patient",emailArray[3],emailArray[4],"Appointment");
                      }
                    });
                  }
