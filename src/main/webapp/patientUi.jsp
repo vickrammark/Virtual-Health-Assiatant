@@ -14,6 +14,13 @@
     </head>
 
     <body>
+         <%
+                     String email=(String)session.getAttribute("message");
+                     if(email==null)
+                     {
+                         response.sendRedirect("Login.jsp");
+                     }
+        %>
         <div class="nav">
               <nav class="navbar navbar-expand-sm mt-0" style="background-color:blueviolet">
                <ul class="navbar-nav">
@@ -29,7 +36,10 @@
                </ul>
               <div class="fromLeft">
                    <div class="nav-item">
-                       <a class="nav-link logOut" href="#" style="color: white;font-size:20px;font-weight:bold">LogOut</a>
+                       <a class="nav-link " href="logOut.jsp" style="color: white;font-size:20px;font-weight:bold">LogOut</a>
+                   </div>                
+                   <div class="nav-item">
+                       <a class="nav-link " href="#" style="color: white;font-size:20px;font-weight:bold">Donate Us</a>
                    </div>                   
                 </div>
           </nav>
@@ -348,9 +358,9 @@
          </div> 
        
         <script>
-         
-                var email=localStorage.getItem("email");
-                alert(email);
+                
+                  var email="<%=email%>";   
+                //var email=localStorage.getItem("email");
                 var left=$(document).width()/2; 
                 $(".update").css("left",left);
                 $(".imgProfile").attr("src","./pateintimageRetriver?email="+email+"&role=patient"); 
@@ -1317,7 +1327,6 @@
                              function:function1
                          },
                          success: function (data, textStatus, jqXHR) {
-                           alert(data);
                           }
                      })
                  }

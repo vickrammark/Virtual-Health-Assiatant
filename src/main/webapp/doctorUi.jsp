@@ -19,6 +19,11 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     </head>
     <body>
+        <% String email=(String)session.getAttribute("message");
+                     if(email==null)
+                     {
+                         response.sendRedirect("Login.jsp");
+                     } %>
         <nav class="navbar navbar-expand-sm mt-0" style="background-color:blueviolet">
                <ul class="navbar-nav">
                    <li class="nav-item">
@@ -33,7 +38,7 @@
                </ul>
               <div class="fromLeft">
                    <div class="nav-item">
-                       <a class="nav-link" href="Login.jsp" style="color: white;font-size:20px;font-weight:bold">Login</a>
+                       <a class="nav-link" href="logOut.jsp" style="color: white;font-size:20px;font-weight:bold">LogOut</a>
                    </div>                   
                    <div class="nav-item">
                        <a class="nav-link" href="signUpSelector.jsp" style="color: white;font-size:20px;font-weight:bold">SignUp</a>
@@ -231,7 +236,7 @@
            </div>    
 
         <script>
-             var email=localStorage.getItem("email");
+                               var email="<%=email%>";   
             
         $(".profileImage").attr("src","pateintimageRetriver?email="+email+"&role=doctor");
             $(".menuOpener").on("click",function(){
@@ -843,7 +848,6 @@
              });
                  function getMailData(presId1,status)
                  {
-                     alert(presId1);
                      $.ajax({
                          type:"POST",
                     url:"AppointmentFixerandCancelerController",
@@ -853,10 +857,8 @@
                         role:"doctor"
                     },
                     success: function (data, textStatus, jqXHR) {
-                        alert(data);
                         var emailArray=new Array();
                         emailArray=data.split(",");
-                        alert(emailArray);
                         sendEmail(emailArray[0],status,emailArray[1],emailArray[2],"doctor",emailArray[3],emailArray[4],"Appointment");
                      }
                          });
@@ -879,7 +881,6 @@
                              function:function1
                          },
                          success: function (data, textStatus, jqXHR) {
-                           alert(data);
                           }
                      })
                  }
