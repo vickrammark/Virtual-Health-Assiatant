@@ -734,7 +734,7 @@
 \n\
                                        </div>        \n\
                                </div>   \n\
-                                 <div class='noteContainer"+AppointmentDetailArray1[5]+" disappear' id='"+AppointmentDetailArray1[5]+"'>\n\
+                                 <div class='noteContainer"+AppointmentDetailArray1[5]+" disappear col-lg-9' id='"+AppointmentDetailArray1[5]+"'>\n\
                                       <div class='noteContainerDetails'>  \n\
                                           <h4>Patient Problems</h4> \n\
                                           <div class='noteDetails'>\n\
@@ -748,11 +748,11 @@
                                           <p class='complication'></p>\n\                            \n\
                                           </div>\n\
                                       </div>  \n\
-\n\                             <div class='presSender1'><button class='btn btn-danger backPager id='"+AppointmentDetailArray1[5]+"''>Back</button></div>\n\
+\n\                             <div class='presSender1'><button class='btn btn-danger backPager' id='"+AppointmentDetailArray1[5]+"'>Back</button></div>\n\
                             \n\
                                              \n\
                                  </div> \n\
-                                 <div class='prescriptionDetials"+AppointmentDetailArray1[5]+"  disappear' id='"+AppointmentDetailArray1[5]+"'>\n\
+                                 <div class='prescriptionDetials"+AppointmentDetailArray1[5]+"  disappear col-lg-9' id='"+AppointmentDetailArray1[5]+"'>\n\
                                         <div class='prescriptionContainerDetails'>     \n\
                                         <div class='form-group morning'><label>Morning Medicine :</label><input type='text' placeholder='Medicine' class='form-control' id='morningMedicine' name='morningMedicine'></div>\n\
                                         <div class='form-group '><label>Timing for morning medicine : </label><select class='morningTime form-control'><option value='After Breakfast'>After Breakfast</option><option value='Before Breakfast'>Before Breakfast</option></select></div>\n\
@@ -782,7 +782,6 @@
                    var id=$(this).attr("id");
                    $(".appointmentDividingContainer1").css("display","none");
                    $(".noteContainer"+id).css("display","block");
-                   $(".prescriptionDetials"+id).css("display","none");
                });
               $(document).on("click",".backPager",function(){
                   var id=$(this).attr("id");

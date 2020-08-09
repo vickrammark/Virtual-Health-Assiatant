@@ -418,19 +418,25 @@ width:100%;
 {
     display: none;
 }
-.prescriptionContainerDetails
+.disappear
 {
     background-color:white;
     border-radius:20px; 
     padding:20px; 
 }
-.noteContainer
+.disappear
 {
     display:none;
     width:100%;
     height:100%; 
     background-color:orange; 
     padding:20px; 
+    margin:0px auto;
+    overflow-y:scroll; 
+}
+.prescriptionContainerDetails
+{
+   overflow-y:scroll;  
 }
 .noteContainerDetails
 {
