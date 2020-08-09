@@ -811,6 +811,9 @@
                   var id=$(this).attr("id");
                  $(".prescriptionDetials"+id).css("display","block");
                  $(".appointmentDividingContainer1").css("display","none");
+                 $.ajax({
+                     
+                 });
               }); 
                var acceptId;
                $(document).on("click",".accept",function(){
