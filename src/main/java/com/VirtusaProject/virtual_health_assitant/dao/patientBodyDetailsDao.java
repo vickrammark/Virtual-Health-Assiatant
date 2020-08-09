@@ -7,6 +7,7 @@ package com.VirtusaProject.virtual_health_assitant.dao;
 
 import com.VirtusaProject.virtual_health_assistant.util.dataBaseConnection;
 import com.VirutsaProject.virtual_health_assistant.Setter.pateintBodyDetailsSetter;
+import com.VirutsaProject.virtual_health_assistant.Setter.patientProblemSetter;
 import com.mysql.cj.xdevapi.PreparableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -57,5 +58,21 @@ public class patientBodyDetailsDao {
         }
         return result;
         }
+    }
+    public String getBodyDetails(patientProblemSetter ps) throws SQLException
+    {
+        int id=Integer.parseInt(ps.getId());
+        String result="";
+        dataBaseConnection db=new dataBaseConnection();
+        Connection con=db.getConnection();
+        String query1="select reason,effects,complication,Symptoms from patientbodydetails where presId=?";
+        PreparedStatement pre1=con.prepareStatement(query1);
+        pre1.setInt(1,id);
+        ResultSet res=pre1.executeQuery();
+        if(res.next())
+        {
+            result=res.getString("reason")+","+res.getString("effects")+","+res.getString("complication")+","+res.getString("Symptoms");
+        }
+        return result;
     }
 }

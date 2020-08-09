@@ -756,6 +756,7 @@
                                         <div class='prescriptionContainerDetails'>     \n\
                                         <div class='form-group morning'><label>Morning Medicine :</label><input type='text' placeholder='Medicine' class='form-control' id='morningMedicine' name='morningMedicine'></div>\n\
                                         <div class='form-group '><label>Timing for morning medicine : </label><select class='morningTime form-control'><option value='After Breakfast'>After Breakfast</option><option value='Before Breakfast'>Before Breakfast</option></select></div>\n\
+                                         <div class='form-group morning'><label>Noon Medicine :</label><input type='text' placeholder='Medicine' class='form-control' id='noonMedicine' name='noonMedicine'></div>\n\  \n\
                                         <div class='form-group'><label>Timing for noon medicine : </label><select class='noonTime form-control'><option value='After Lunch'>After Lunch</option><option value='Before Lunch'>Before Lunch</option></select></div>\n\
                                         <div class='form-group morning'><label>Night Medicine</label><input type='text' placeholder='Medicine' class='form-control' id='nightMedicine' name='nightMedicine'></div>\n\
                                         <div class='form-group'><label>Timing for night medicine : </label><select class='nightTime form-control'><option value='After dinner'>After dinner</option><option value='Before dinner'>Before dinner</option></select></div> \n\
@@ -782,6 +783,23 @@
                    var id=$(this).attr("id");
                    $(".appointmentDividingContainer1").css("display","none");
                    $(".noteContainer"+id).css("display","block");
+                   alert(id);
+                   $.ajax({
+                       type:"POST",
+                       url:"patientBodyDetailsController",
+                       data:{
+                           presId:id,
+                           function:"getting"
+                       },
+                       success: function (data, textStatus, jqXHR) {
+                           var array1=new Array();
+                           array1=data.split(",");
+                           $(".reason").html(array1[0]);
+                           $(".symptoms").html(array1[3]);
+                           $(".effects").html(array1[1]);
+                           $(".complication").html(array1[2]);
+                       }
+                   })
                });
               $(document).on("click",".backPager",function(){
                   var id=$(this).attr("id");

@@ -5,20 +5,38 @@
  */
 package com.VirutsaProject.virtual_health_assistant.Setter;
 
-import com.VirtusaProject.virtual_health_assistant.modal.bookingModal;
-
 /**
  *
  * @author DELL
  */
 public class bookingSetter {
- 
-    public bookingModal setBooking(String did,String email,String reason)
-    {
-        bookingModal bk=new bookingModal();
-        bk.setDid(did);
-        bk.setEmail(email);
-        bk.setReason(reason);
-        return bk;
+    
+    private String did="";
+    private String email="";
+    private String reason="";
+
+    public String getReason() {
+        return reason;
     }
+
+    public void setReason(String reason) {
+        this.reason = reason;
+    }
+
+    public String getDid() {
+        return did;
+    }
+
+    public void setDid(String did) {
+        this.did = did;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    
 }

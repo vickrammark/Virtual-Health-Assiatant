@@ -5,7 +5,7 @@
  */
 package com.VirtusaProject.virtual_health_assitant.dao;
 
-import com.VirtusaProject.virtual_health_assistant.modal.bookingModal;
+import com.VirutsaProject.virtual_health_assistant.Setter.bookingSetter;
 import com.VirtusaProject.virtual_health_assistant.util.dataBaseConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -17,7 +17,7 @@ import java.sql.SQLException;
  * @author DELL
  */
 public class bookingDao {
-    public String setBookingDeails(bookingModal bm) throws SQLException
+    public String setBookingDeails(bookingSetter bm) throws SQLException
     {
         String result="";
         dataBaseConnection db=new dataBaseConnection();

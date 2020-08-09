@@ -5,9 +5,9 @@
  */
 package com.VirtusaProject.virtual_health_assistant.Controller;
 
-import com.VirtusaProject.virtual_health_assistant.modal.bookingModal;
-import com.VirtusaProject.virtual_health_assitant.dao.bookingDao;
 import com.VirutsaProject.virtual_health_assistant.Setter.bookingSetter;
+import com.VirtusaProject.virtual_health_assitant.dao.bookingDao;
+import com.VirtusaProject.virtual_health_assistant.modal.bookingModal;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -35,8 +35,8 @@ public class bookingControlller extends HttpServlet {
             PrintWriter out=resp.getWriter();
         if(function.equals("booking"))
         {   
-            bookingSetter bs=new bookingSetter();
-            bookingModal bm=bs.setBooking(docId, email,reason);
+            bookingModal bs=new bookingModal();
+            bookingSetter bm=bs.setBooking(docId, email,reason);
             bookingDao bk=new bookingDao();
             String result="";
         try {

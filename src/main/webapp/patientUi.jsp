@@ -1286,7 +1286,8 @@
                             reason:reason,
                             symptoms:symptoms,
                             effects:effects,
-                            complication:complication
+                            complication:complication,
+                            function:"saving"
                         },
                         success: function (data, textStatus, jqXHR) {
                             alert(data);
