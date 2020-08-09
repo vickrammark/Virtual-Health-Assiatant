@@ -222,8 +222,8 @@
            </div>
            <div class="myPatientContainer">
                <div class="myPatientContent">
-                   
                </div>
+               
            </div>
        </div>
            <div class='updater'>
@@ -591,7 +591,9 @@
                           {                               AppointmentDetailArray=patientDetailArray[x].split(",");
                               patientImageArray.push(AppointmentDetailArray[1]);
                               $(".appointmentContent").append(
-                                        "<div class='appointmentDividingContainer' id='box"+AppointmentDetailArray[5]+"'><div class='appointmentMainContainer'><div class='.patientImageContainer'>\n\
+                          "<div class='appointmentDividingContainer' id='box"+AppointmentDetailArray[5]+"'>\n\
+                               <div class='appointmentMainContainer'>\n\
+                                        <div class='.patientImageContainer'>\n\
                                              <img class='patientImage"+x+" patImage' src=''> \n\
                                                   \n\
                                         </div>\n\
@@ -626,14 +628,14 @@
                                                 <button class='btn btn-primary confirmButton' id='"+AppointmentDetailArray[5]+"'>Confirm</button> \n\
                                                    </div>                            \n\
                                               \n\
-                                         </div>     \n\
-                                        </div> \n\
+                                        </div>     \n\
+                                    </div> \n\
                                         <div class='decidingContainer'>  \n\
                                               <button class='btn btn-primary accept' id='"+AppointmentDetailArray[5]+"'>Accept</button>  \n\
                                               <button class='btn btn-danger cancel' id='"+AppointmentDetailArray[5]+"'>Reject</button>      \n\
-                                        </div></div>      \n\
-                                            \n\
-                                                 "
+                                        </div>\n\
+                                  </div>      \n\
+                                            \n\ "
                               );
                           }
                           for(var x=0;x<patientImageArray.length;x++)
@@ -725,7 +727,41 @@
                                               <button class='btn btn-danger cancel' id='"+AppointmentDetailArray1[5]+"'>Remove</button>      \n\
                                             </div>      \n\
                                      </div>\n\
-                               </div>     \n\ "
+                                       <div class='workingButtons'>\n\
+                                            <button class='btn btn-light note' id='"+AppointmentDetailArray1[5]+"'>Note from patient</button>\n\
+                                            <button class='btn btn-light pres' id='"+AppointmentDetailArray1[5]+"' >Wirte prescription</button>\n\
+                                            <button class='btn btn-light past' id='"+AppointmentDetailArray1[5]+"'>Past Records</button>\n\
+\n\
+                                       </div>        \n\
+                               </div>   \n\
+                                 <div class='noteContainer"+AppointmentDetailArray1[5]+" disappear' id='"+AppointmentDetailArray1[5]+"'>\n\
+                                      <div class='noteContainerDetails'>  \n\
+                                          <h4>Patient Problems</h4> \n\
+                                          <div class='noteDetails'>\n\
+                                          <label>Problem :</label>\n\
+                                          <p class='reason'></p>\n\
+                                          <label>Symptoms :</label>\n\
+                                          <p class='symptoms'></p>\n\
+                                          <label>Effects :</label>\n\
+                                          <p class='effects'></p>\n\
+                                          <label>Complication :</label>\n\
+                                          <p class='complication'></p>\n\                            \n\
+                                          </div>\n\
+                                      </div>  \n\
+\n\                             <div class='presSender1'><button class='btn btn-danger backPager id='"+AppointmentDetailArray1[5]+"''>Back</button></div>\n\
+                            \n\
+                                             \n\
+                                 </div> \n\
+                                 <div class='prescriptionDetials"+AppointmentDetailArray1[5]+"  disappear' id='"+AppointmentDetailArray1[5]+"'>\n\
+                                        <div class='prescriptionContainerDetails'>     \n\
+                                        <div class='form-group morning'><label>Morning Medicine :</label><input type='text' placeholder='Medicine' class='form-control' id='morningMedicine' name='morningMedicine'></div>\n\
+                                        <div class='form-group '><label>Timing for morning medicine : </label><select class='morningTime form-control'><option value='After Breakfast'>After Breakfast</option><option value='Before Breakfast'>Before Breakfast</option></select></div>\n\
+                                        <div class='form-group'><label>Timing for noon medicine : </label><select class='noonTime form-control'><option value='After Lunch'>After Lunch</option><option value='Before Lunch'>Before Lunch</option></select></div>\n\
+                                        <div class='form-group morning'><label>Night Medicine</label><input type='text' placeholder='Medicine' class='form-control' id='nightMedicine' name='nightMedicine'></div>\n\
+                                        <div class='form-group'><label>Timing for night medicine : </label><select class='nightTime form-control'><option value='After dinner'>After dinner</option><option value='Before dinner'>Before dinner</option></select></div> \n\
+                                        <div class='presSender'><button class='btn btn-primary presSendDetails'>Send</button><button class='btn btn-danger backPager' id='"+AppointmentDetailArray1[5]+"'>Back</button></div>   \n\
+                                        </div>    \n\
+                                 </div>       \n\ "
                                      
                               );
                           }
@@ -742,6 +778,23 @@
                        
                   });
                }); 
+               $(document).on("click",".note",function(){
+                   var id=$(this).attr("id");
+                   $(".appointmentDividingContainer1").css("display","none");
+                   $(".noteContainer"+id).css("display","block");
+                   $(".prescriptionDetials"+id).css("display","none");
+               });
+              $(document).on("click",".backPager",function(){
+                  var id=$(this).attr("id");
+                 $(".appointmentDividingContainer1").css("display","block");
+                 $(".noteContainer"+id).css("display","none");
+                 $(".prescriptionDetials"+id).css("display","none");
+               });
+              $(document).on("click",".pres",function(){
+                  var id=$(this).attr("id");
+                 $(".prescriptionDetials"+id).css("display","block");
+                 $(".appointmentDividingContainer1").css("display","none");
+              }); 
                var acceptId;
                $(document).on("click",".accept",function(){
                    acceptId=$(this).attr("id");

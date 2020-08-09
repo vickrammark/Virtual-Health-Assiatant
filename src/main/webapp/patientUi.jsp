@@ -331,24 +331,13 @@
             <div class="myDoctorContainer">
                 <div class="myDoctorContent">
                     <div class="row m-0"> 
-                        <div class="assistContainer col-lg-3 col-sm-3  col-xs-10">
-                            <div class="doctorsFixed">
-                               <button class="chooser">Doctors</button>
-                            </div>
-                           <div class="Note">
-                               <button class="chooser">Note for Doctors</button>
-                            </div>
-                            <div class="prescription">
-                               <button class="chooser">Prescriptions</button>
-                            </div>
-                            <div class="LabRecords">
-                               <button class="chooser">Your Records</button>
-                           </div>
-                        </div>
-                        <div class="workingArea col-sm-9 col-lg-9 col-xs-10 pl-2 pr-2">
+                        <div class="workingArea">
                             <div class="fixedDoctorDetails">
                             </div>
                             <div class="noteContainer">
+                                
+                            </div>
+                            <div class="prescriptionDetials">
                                 
                             </div>
                         </div>
@@ -1102,7 +1091,7 @@
                                         </div> \n\
                                        <div class='RemoveButton' id='"+appointmentDeatilArray[9]+"'>\n\
                                          <button class='btn btn-danger'>Remove</button>\n\
-                                    </div>\n\
+                                       </div>\n\
                                 </div>"
                                         
                                   );  
@@ -1154,12 +1143,9 @@
                          $(".doctorContainer").css("display","none");
                          $(".hospitalContainer").css("display","none"); 
                          $(".myDoctorContainer").css("display","block");
-                         
-                    });
                      var docImageArray1=new Array();
                      var docDeatailArray1=new Array();
                      var appointmentDeatilArray1=new Array();
-                    $(document).on("click",".doctorsFixed",function(){
                         $(".noteContainer").css("display","none");
                         $(".fixedDoctorDetails").css("display","block");
                        $.ajax({
@@ -1173,11 +1159,11 @@
                                    
                               docDeatailArray1=data.split("|");
                                $(".fixedDoctorDetails").html("");
+                               var presIdMain;
                               for(var x=0;x<docDeatailArray1.length-1;x++)
                               {
                                   appointmentDeatilArray1=docDeatailArray1[x].split(",");
                                   docImageArray1.push(appointmentDeatilArray1[3]);
-                                
                                  $(".fixedDoctorDetails").append(
                                         "<div class='appointmentMainContent1' id='"+appointmentDeatilArray1[9]+"'><div class='bookedDocImageContainer1'>\n\
                                              <img class='profileDocImage1"+x+" prodocImage ' src=''>\n\
@@ -1208,17 +1194,28 @@
 \
                                                 </div>\n\
                                         </div> \n\
+\n\
+                                 <div class='assistContainer'>        \n\
+                                      <div class='Note'  id='"+appointmentDeatilArray1[9]+"'>\n\
+                                            <button class='btn btn-warning chooser' id='"+appointmentDeatilArray1[9]+"'>Note for Doctors</button>\n\
+                                      </div>\n\
+                                      <div class='prescription'  id='"+appointmentDeatilArray1[9]+"'>\n\
+                                            <button class='btn btn-warning chooser' id='"+appointmentDeatilArray1[9]+"'>Prescriptions</button>\n\
+                                      </div>\n\
+                                      <div class='LabRecords'  id='"+appointmentDeatilArray1[9]+"'>\n\
+                                           <button class='btn btn-warning chooser' id='"+appointmentDeatilArray1[9]+"'>Your Records</button>\n\
+                                      </div>\n\
+                                             \n\
                                        <div class='RemoveButton1' id='"+appointmentDeatilArray1[9]+"'>\n\
                                          <button class='btn btn-danger'>Remove</button>\n\
                                     </div>\n\
-                                </div>"
-                                        
-                                  );  
+                                </div>\n\
+                                  </div>\n\
+");  
                                   }
                                 for(var y=0;y<docImageArray1.length;y++)
                                 {
-                                  $(".profileDocImage1"+y).attr("src","./pateintimageRetriver?email="+docImageArray1[y]+"&role=doctor");      
-                                   
+                                  $(".profileDocImage1"+y).attr("src","./pateintimageRetriver?email="+docImageArray1[y]+"&role=doctor");        
                                 }
             
                               }
@@ -1228,27 +1225,82 @@
                           
                     });
                     $(document).on("click",".Note",function(){
+                        var presId=$(this).attr("id");
+                        alert(presId);
                        $(".fixedDoctorDetails").css("display","none");
                        $(".noteContainer").css("display","block");
                        $(".noteContainer").html("\n\
-                            <form> \n\
-                                <div class='form-group'>\n\
+                                <div class='noteDetailsContainer'>  \n\
+                                <div class='alert alert-success detailsMessanger'>Hey,your details have been sent to your doctor</div>     \n\
+                                <div class='alert alert-danger detailsMessanger1'>Hey,Sorry a patient can have only one submission</div>     \n\
+                                                      \n\
+                               <div class='form-group1'>\n\
                                      <label for='reason'>\n\
                                             Enter the Issue : \n\
                                      </label>\n\
-                                     <textarea class='form-control' id='reason' name='reason' rows='15' cols='30'>\n\
-                                     </textarea></div>   \n\
-\n\                             <div class='form-group'><label for='symptoms'>Enter the Symptoms : </label><textarea  class='form-control' id='Symptoms' name=symptoms' rows='15' cols='30'></textarea></div>  \n\
-                                <div class='form-group'><label for='effects'>Enter the Body Changes : </label><textarea class='form-control' id='effects' name='effects' rows='15' cols='30'></textarea></div> \n\
-                                <div class='form-group'><label for='complication'>Enter if you have medical complications : </label><textarea class='form-control' id='complication' name='complication' rows='15' cols='30'></textarea></div> \n\
-                                 \n\
-                                       \n\
-                            </form>  \n\
+                                     <textarea class='form-control' id='reason"+presId+"' name='reason'>\n\
+                                     </textarea>\n\
+                                </div>   \n\
+\n\                             <div class='form-group1'><label for='symptoms'>Enter the Symptoms : </label><textarea  class='form-control' id='Symptoms"+presId+"' name=symptoms' ></textarea></div>  \n\
+                                <div class='form-group1'><label for='effects'>Enter the Body Changes : </label><textarea class='form-control' id='effects"+presId+"' name='effects'></textarea></div> \n\
+                                <div class='form-group1'><label for='complication'>Enter if you have medical complications : </label><textarea class='form-control' id='complication"+presId+"' name='complication'></textarea></div> \n\
                                 <div class='buttonFixer'> \n\
-                                      <a class='btn btn-primary'>Send</a> \n\
-                                </div>      \n\
+                                      <button class='btn btn-primary send1' id='"+presId+"'>Send</button> \n\
+                                      <buton class='btn btn-danger backNote'>Back</button>          \n\
+                                </div>     \n\
+                                </div>  \n\
                         ");
                     });
+                    
+                    $(document).on("click",".backNote",function(){
+                          $(".fixedDoctorDetails").css("display","block");
+                       $(".noteContainer").css("display","none");
+                       $(".prescriptionDetials").css("display","none");
+                    });
+                    $(document).on("click",".prescription",function(){
+                       $(".noteContainer").css("display","none");
+                       $(".prescriptionDetials").css("display","block");
+                       var id=$(this).attr("id");
+                       $.ajax({
+                          type:"POST",
+                          url:"patientRemadyDetails",
+                          data:{
+                             preId:id 
+                          },
+                          success: function (data, textStatus, jqXHR) {
+                                 alert(data);      
+                          }
+                       });   
+                    });
+                 $(document).on("click",".send1",function(){
+                     var id=$(this).attr("id");
+                     var reason=$("#reason"+id).val();
+                     var symptoms=$("#Symptoms"+id).val();
+                     var effects=$("#effects"+id).val();
+                     var complication=$("#complication"+id).val();
+                     $.ajax({
+                        type:"POST",
+                        url:"patientBodyDetailsController",
+                        data:{
+                            presId:id,
+                            reason:reason,
+                            symptoms:symptoms,
+                            effects:effects,
+                            complication:complication
+                        },
+                        success: function (data, textStatus, jqXHR) {
+                            alert(data);
+                            if(data==="true")
+                            {
+                                $(".detailsMessanger").fadeIn(1000).css("display","block");
+                            }
+                            else
+                            {
+                                $(".detailsMessanger1").fadeIn(1000).css("display","block");
+                            }
+                        }
+                     });
+                 });   
                 $(document).on("click",".RemoveButton1",function(){
                     var remove=$(".RemoveButton1").attr("id");
                      getMailData(remove,"cancel");
@@ -1269,7 +1321,7 @@
                             }
                         }
                         
-                    })
+                    });
                 });
                    $(document).on("click",".RemoveButton",function(){
                     var remove=$(".RemoveButton").attr("id");
@@ -1328,7 +1380,7 @@
                          },
                          success: function (data, textStatus, jqXHR) {
                           }
-                     })
+                     });
                  }
         </script>
     </body>

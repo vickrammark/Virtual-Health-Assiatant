@@ -563,19 +563,18 @@ btn
 .assistContainer
 {
   display:flex;
-  flex-direction:column;
+  flex-wrap:wrap; 
+  flex-direction:row;
   justify-content:space-around;
   align-items:center; 
   height:100%; 
+  width:100%; 
 }
 .assistContainer div
 {
-   border:1px solid gainsboro;
    padding:15px;
    border-radius:15px;
-   width:150px; 
    text-align: center;
-   background-color:orange; 
 }
 .assistContainer div button
 {
@@ -588,6 +587,7 @@ btn
    border:1px solid gray;
    border-radius:15px;
    overflow:scroll; 
+   width:100%; 
 }
 .row
 {
@@ -603,11 +603,13 @@ btn
 }
 .chooser
 {
-  background-color:white;
   border-radius:10px;
   text-align:center;
+  width:150px;
+  height:100px; 
   
 }
+
 .animation1
 {
     animation-name: animtaor1;
@@ -615,10 +617,32 @@ btn
     animation-timing-function:ease-in-out;
     animation-duration:0.5s; 
 }
+.noteContainer
+{
+    background-color:orange;
+    padding:20px; 
+}
+.noteDetailsContainer
+{
+    font-size:20px; 
+    background-color:white; 
+    padding:20px; 
+}
+#reason,#Symptoms,#effects,#complication
+{
+  margin:15px; 
+  width: 100%;
+}
 @keyframes animtaor1
 {
    0%{transform:scale(1)}
    100%{transform:scale(0)}
+}
+.detailsMessanger,.detailsMessanger1
+{
+    display:none;
+    text-align:center;
+    font-size:15px; 
 }
 @media only screen and (max-width: 600px) {
      .menuList
