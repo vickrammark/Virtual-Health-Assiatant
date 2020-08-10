@@ -701,7 +701,7 @@
 \n\
                                           </div>     \n\
                                        \n\
-                                         <div class='appointmentFixingContainer1 updaterContainer'> \n\
+                                         <div class='appointmentFixingContainer1 updaterContainer"+AppointmentDetailArray1[5]+"'> \n\
                                                 <div class='alert alert-success updateMessage"+AppointmentDetailArray1[5]+"'> \n\
                                                     Successfully Updated the Appointment    \n\
                                                 </div>   \n\
@@ -760,6 +760,8 @@
                                         <div class='form-group'><label>Timing for noon medicine : </label><select class='noonTime form-control'><option value='After Lunch'>After Lunch</option><option value='Before Lunch'>Before Lunch</option></select></div>\n\
                                         <div class='form-group morning'><label>Night Medicine</label><input type='text' placeholder='Medicine' class='form-control' id='nightMedicine' name='nightMedicine'></div>\n\
                                         <div class='form-group'><label>Timing for night medicine : </label><select class='nightTime form-control'><option value='After dinner'>After dinner</option><option value='Before dinner'>Before dinner</option></select></div> \n\
+                                        <div class='form-group'><label>Posible Cause of problem : </label><select class=''> \n\
+                                        <div class=form-g> \n\\n\
                                         <div class='presSender'><button class='btn btn-primary presSendDetails'>Send</button><button class='btn btn-danger backPager' id='"+AppointmentDetailArray1[5]+"'>Back</button></div>   \n\
                                         </div>    \n\
                                  </div>       \n\ "
@@ -891,7 +893,8 @@
                },2000);
              });  
              $(document).on("click",".updaterButton",function(){
-                      $('.updaterContainer').css("display","block");                
+                    var id=$(this).attr("id");
+                      $('.updaterContainer'+id).css("display","block");                
              });
              $(document).on("click",".updaterDeciderButtton",function(){
                  var presId1=$(this).attr("id");
