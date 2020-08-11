@@ -890,7 +890,7 @@
                       }
                     }
                 });
-               },2000);
+               },500);
              });  
              $(document).on("click",".updaterButton",function(){
                     var id=$(this).attr("id");

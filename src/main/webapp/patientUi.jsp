@@ -811,6 +811,12 @@
                           $(".doctorImage"+t).attr("src","./pateintimageRetriver?email="+imageArray[t]+"&role=doctor");
                      }
                     }
+                    else
+                    {
+                        $(".doctorContent").html("Sorry Currently No Doctor Are Available");
+                        $(".doctorContent").css("font-size","20px");
+                        $(".doctorContent").css("text-align","center");
+                    }
                  }
             });
         }); 
@@ -1045,6 +1051,8 @@
                                  function:"request"
                              },
                              success: function (data, textStatus, jqXHR) {
+                              if(data.includes("|"))  
+                              {
                               docDeatailArray=data.split("|");
                                $(".appointmentContent").html("");
                               for(var x=0;x<docDeatailArray.length-1;x++)
@@ -1106,10 +1114,17 @@
                                   $(".profileDocImage"+y).attr("src","./pateintimageRetriver?email="+docImageArray[y]+"&role=doctor");      
                                    
                              }
+                             
                              }
-                         });
-                  
-                      
+                             else
+                             {
+                                 $(".appointmentContent").html("Sorry Currently No Appointment Now");
+                                 $(".appointmentContent").css("font-size","20px");
+                                 $(".appointmentContent").css("text-align","center");
+
+                             }
+                         }
+                     });                   
                  });
                  var cancelButton;
                    setInterval(function(){
@@ -1130,10 +1145,11 @@
                            }
                            else
                            {
+                               $(".notifiactions").html("");
                            }
                          }
                       });  
-                    },1000);   
+                    },500);   
                     $(".doctorLink").on("click",function(){
                         $(".appointmentContainer").css("display","none");
                          $(".profileContainer").css("display","none");
@@ -1158,7 +1174,8 @@
                                  function:"confirmed"
                              },
                              success: function (data, textStatus, jqXHR) {
-                                   
+                               if(data.includes("|"))
+                               {
                               docDeatailArray1=data.split("|");
                                $(".fixedDoctorDetails").html("");
                                var presIdMain;
@@ -1221,6 +1238,14 @@
                                 }
             
                               }
+                              else
+                              {
+                                $(".fixedDoctorDetails").html("Sorry Currently No Appointments!!!");
+                                $(".fixedDoctorDetails").css("font-size","20px");
+                                $(".fixedDoctorDetails").css("text-align","center");                              
+                              }
+                          }
+                          
                               
                           });
                               
@@ -1394,6 +1419,7 @@
                           }
                      });
                  }
+             
         </script>
     </body>
 </html>
