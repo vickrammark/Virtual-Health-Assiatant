@@ -5,21 +5,20 @@
  */
 package com.VirtusaProject.virtual_health_assitant.dao;
 
-import com.VirtusaProject.virtual_health_assistant.modal.appointmentModal;
 import com.VirtusaProject.virtual_health_assistant.util.dataBaseConnection;
 import com.VirutsaProject.virtual_health_assistant.Setter.appointmentSetter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.logging.Logger;
+import org.apache.log4j.Logger;
 
 /**
  *
  * @author DELL
  */
 public class appointmentDao {
-     public  final static  Logger logger =Logger.getLogger(appointmentDao.class.getName());
+        static final  Logger logger2=Logger.getLogger(appointmentDao.class);
 
     public String getAppointmentDeatils(appointmentSetter am) throws SQLException
     {
@@ -34,7 +33,7 @@ public class appointmentDao {
         int id=0;
         if(res.next())
         {
-            logger.info("found the patient id");
+            logger2.info("found the patient id");
             id=res.getInt("pateintId");
         }
         String query3="select doctor_details.first_name,doctor_details.address,doctor_details.place_of_working,"
@@ -48,6 +47,7 @@ public class appointmentDao {
                 ResultSet res3=pre3.executeQuery();
        if(res3.next())
        {
+           logger2.info("Doctor details Obtained");
            result=res3.getString("doctor_details.first_name")+","+res3.getString("doctor_details.address")+","+res3.getString("doctor_details.place_of_working")
                    +","+res3.getString("doctor_details.email")+","+res3.getString("doctor_details.phone_number")+","+res3.getString("doctor_details.sex")+","+res3.getString("doctor_details.specialization")+
                    ","+res3.getString("doctor_details.qualification")+","+res3.getString("doctor_details.experience")+","

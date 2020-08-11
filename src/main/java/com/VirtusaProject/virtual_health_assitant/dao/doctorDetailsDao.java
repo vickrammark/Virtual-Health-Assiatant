@@ -12,14 +12,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import javax.servlet.RequestDispatcher;
-
-/**
- *
- * @author DELL
- */
+import org.apache.log4j.Logger;
 public class doctorDetailsDao {
-
+ 
+static final Logger logs=Logger.getLogger(doctorDetailsDao.class);
  public String setDoctorDeatils(doctorDetailsModal d) throws SQLException
  {
      String Fname=d.getFirst_name();
@@ -86,6 +82,7 @@ public class doctorDetailsDao {
                 int n=pre2.executeUpdate();
                 if(n>0)
                 {
+                    logs.info("Sucessfully saved the Doctor Details");
                     success="true";
                 }
                 else

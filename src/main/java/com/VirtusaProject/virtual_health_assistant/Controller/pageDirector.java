@@ -30,6 +30,7 @@ import org.apache.log4j.Logger;
 public class pageDirector extends HttpServlet {
 
     static PrintWriter out;
+    static final  Logger logger=Logger.getLogger(pageDirector.class);
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         out=resp.getWriter(); 
@@ -46,6 +47,7 @@ public class pageDirector extends HttpServlet {
                 
                 if(role.equals("doctor"))
                 {
+                    logger.info("doctor succesfully signed in");
                     session.setAttribute("message",email); 
                     resp.sendRedirect("doctorChooser.jsp");
                 }

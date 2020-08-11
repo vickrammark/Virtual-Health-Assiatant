@@ -9,23 +9,17 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.ws.rs.core.Request;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.apache.log4j.Logger;
 
 /**
  *
@@ -48,6 +42,7 @@ public class doctorIntermediateChecker extends HttpServlet {
         int experience;   
         String Hospital=null;
         InputStream input=null;
+        static final Logger logger4=Logger.getLogger(doctorIntermediateChecker.class);
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         PrintWriter out=resp.getWriter();
@@ -141,9 +136,8 @@ public class doctorIntermediateChecker extends HttpServlet {
             try {
                 ans = ch.checkUser(Fname, email, password, role, out);
             } catch (Exception ex) {
-                out.println(ex.getMessage()+"Hello");
+                logger4.error("Not successfull-->Problem-->"+ex.getMessage());
             }
-              out.println(ans+",Name="+Fname+",Email="+email+",Password="+password+",Role="+role+",exp="+experience);
               if(!ans)
               {
                   
@@ -167,13 +161,13 @@ public class doctorIntermediateChecker extends HttpServlet {
               }
               else
               {
-                 session.setAttribute("message","false");
-                 resp.sendRedirect("/doctorRegistration.jsp");
+                 session.setAttribute("message","true");
+                 resp.sendRedirect("doctorRegistration.jsp");
               }
           }
           catch(Exception ex)
           {
-              out.println(ex.getMessage()+"Hello1"+Hospital+Fname+"res="+result);
+              logger4.error("failed to register"+ex.getMessage());
           }
           
         }

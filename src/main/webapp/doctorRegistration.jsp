@@ -152,9 +152,9 @@
   if ( window.history.replaceState ) {
         window.history.replaceState( null, null, window.location.href );
     }
-      var success=<%=(String)request.getAttribute("message")%>;
+      var success=<%=(String)session.getAttribute("message")%>;
                       window.console.log(success);
-                        if(success==false)
+                        if(success==true)
                         {
                           $(".alert-Sname").css("display","block");
                           $(".specialization").html("<option>select</option>");

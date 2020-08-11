@@ -13,13 +13,15 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import org.apache.log4j.Logger;
 
 /**
  *
  * @author DELL
  */
 public class checkUser {
- 
+     static final  Logger logger1=Logger.getLogger(checkUser.class);
+
     public boolean checkUser(String Name,String Email,String password,String role,PrintWriter out) throws SQLException
     {
         try
@@ -51,16 +53,18 @@ public class checkUser {
         ResultSet res=pre.executeQuery();
         if(res.next())
         {
+            logger1.info("verrfication failed already exist");               
             return true;
         }
         else
         {
+            logger1.info("verification done new user");
             return false;
         }
         }
         catch(Exception ex)
         {
-            out.println("checkUser="+ex.getMessage()+","+Name+","+Email+","+password+","+role+";;;");
+            logger1.error("Verification problem="+ex.getMessage());
         }
         return false;
     }

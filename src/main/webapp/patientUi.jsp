@@ -1328,7 +1328,6 @@
                 });
                    $(document).on("click",".RemoveButton",function(){
                     var remove=$(this).attr("id");
-                    alert(remove);
                     var docName=$(".docName"+remove).attr("id");
                     var AppDate=$(".AppoDate"+remove).attr("id");
                     var AppTime=$(".AppoTime"+remove).attr("id");
@@ -1345,7 +1344,6 @@
                         success: function (data, textStatus, jqXHR) {
                             if(data==="true")
                             {
-                               alert("true"); 
                                $("#"+remove).addClass("animation1").delay(500).queue(function(next){
                                   $("#"+remove).css("display","none"); 
                                   next();
@@ -1354,7 +1352,6 @@
                             }
                             else
                             {
-                                alert("false");
                             }
                         }
                         
