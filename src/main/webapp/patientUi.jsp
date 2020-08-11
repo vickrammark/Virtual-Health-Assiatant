@@ -379,6 +379,7 @@
                      left:"-55%"          
                 }); 
             });
+            var userName;
             $.ajax({
                type:"POST",
                url:"upadter",
@@ -388,6 +389,7 @@
                    role:"patient"
                },
                success: function (data, textStatus, jqXHR) {
+                         userName=data;
                         $(".userName").html(data);
                     }
             });
@@ -1067,7 +1069,7 @@
                                                <h4>Doctor Details</h4> \n\
                                                      \n\
                                                 <div class='docDetail'>\n\
-                                                     <p>Name : "+appointmentDeatilArray[0]+"</p>   \n\
+                                                     <p class='docName"+appointmentDeatilArray[9]+"'id='"+appointmentDeatilArray[0]+"'>Name : "+appointmentDeatilArray[0]+"</p>   \n\
                                                      <p>Address : "+appointmentDeatilArray[1]+"</p>   \n\
                                                      <p>Place_of_working : "+appointmentDeatilArray[2]+"</p>   \n\
                                                      <p>Email : "+appointmentDeatilArray[3]+"\n\
@@ -1082,9 +1084,9 @@
                                         <div class='appointmentDetailContainer'>\n\
                                                <h4>AppointmentDetail</h4>  \n\
                                                 <div class='appointmentDetail' id='"+appointmentDeatilArray[9]+"'> \n\
-                                                    <p>Appointment Date : "+appointmentDeatilArray[10]+"</p>    \n\
+                                                    <p class='AppoDate"+appointmentDeatilArray[9]+"' id='"+appointmentDeatilArray[10]+"'>Appointment Date : "+appointmentDeatilArray[10]+"</p>    \n\
                                                     <p>Appointment Reason :"+appointmentDeatilArray[11]+"</p>    \n\
-                                                    <p>Appointment Time : "+appointmentDeatilArray[12]+"</p>    \n\
+                                                    <p class='AppoTime"+appointmentDeatilArray[9]+"' id='"+appointmentDeatilArray[12]+"'>Appointment Time : "+appointmentDeatilArray[12]+"</p>    \n\
                                                     <p>Appointment Confirmation : "+appointmentDeatilArray[13]+"</p>    \n\
 \
                                                 </div>\n\
@@ -1172,7 +1174,7 @@
                                                <h4>Doctor Details1</h4> \n\
                                                      \n\
                                                 <div class='docDetail'>\n\
-                                                     <p>Name : "+appointmentDeatilArray1[10]+"</p>   \n\
+                                                     <p class='docName"+appointmentDeatilArray1[9]+"'id='"+appointmentDeatilArray1[0]+"'>Name : "+appointmentDeatilArray1[0]+"</p>   \n\
                                                      <p>Address : "+appointmentDeatilArray1[1]+"</p>   \n\
                                                      <p>Place_of_working : "+appointmentDeatilArray1[2]+"</p>   \n\
                                                      <p>Email : "+appointmentDeatilArray1[3]+"\n\
@@ -1187,9 +1189,9 @@
                                         <div class='appointmentDetailContainer1'>\n\
                                                <h4>AppointmentDetail</h4>  \n\
                                                 <div class='appointmentDetail' id='"+appointmentDeatilArray1[9]+"'> \n\
-                                                    <p>Appointment Date : "+appointmentDeatilArray1[10]+"</p>    \n\
+                                                    <p class='AppoDate"+appointmentDeatilArray1[9]+"' id='"+appointmentDeatilArray1[10]+"'>Appointment Date : "+appointmentDeatilArray1[10]+"</p>    \n\
                                                     <p>Appointment Reason :"+appointmentDeatilArray1[11]+"</p>    \n\
-                                                    <p>Appointment Time : "+appointmentDeatilArray1[12]+"</p>    \n\
+                                                    <p class='AppoTime"+appointmentDeatilArray1[9]+"'id='"+appointmentDeatilArray1[12]+"'>Appointment Time : "+appointmentDeatilArray1[12]+"</p>    \n\
                                                     <p>Appointment Confirmation : "+appointmentDeatilArray1[13]+"</p>    \n\
 \
                                                 </div>\n\
@@ -1303,13 +1305,13 @@
                      });
                  });   
                 $(document).on("click",".RemoveButton1",function(){
-                    var remove=$(".RemoveButton1").attr("id");
+                    var remove=$(this).attr("id");
                      getMailData(remove,"cancel");
                     $.ajax({
                         type:"POST",
                         url:"AppointmentFixerandCancelerController",
                         data:{
-                            presId:$(".RemoveButton1").attr("id"),
+                            presId:remove,
                             function:"cancel"
                         },
                         success: function (data, textStatus, jqXHR) {
@@ -1325,22 +1327,34 @@
                     });
                 });
                    $(document).on("click",".RemoveButton",function(){
-                    var remove=$(".RemoveButton").attr("id");
-                    getMailData(remove,"cancel");
+                    var remove=$(this).attr("id");
+                    alert(remove);
+                    var docName=$(".docName"+remove).attr("id");
+                    var AppDate=$(".AppoDate"+remove).attr("id");
+                    var AppTime=$(".AppoTime"+remove).attr("id");
+                    console.log(docName);
+                    console.log(AppDate);
+                    console.log(AppTime);
                     $.ajax({
                         type:"POST",
                         url:"AppointmentFixerandCancelerController",
                         data:{
-                            presId:$(".RemoveButton").attr("id"),
+                            presId:remove,
                             function:"cancel"
                         },
                         success: function (data, textStatus, jqXHR) {
                             if(data==="true")
                             {
+                               alert("true"); 
                                $("#"+remove).addClass("animation1").delay(500).queue(function(next){
                                   $("#"+remove).css("display","none"); 
                                   next();
                                }); 
+                               sendEmail(email,"cancel",userName,docName,"patient",AppDate,AppTime,"Appointment");
+                            }
+                            else
+                            {
+                                alert("false");
                             }
                         }
                         

@@ -12,12 +12,15 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Logger;
 
 /**
  *
  * @author DELL
  */
 public class appointmentDao {
+     public  final static  Logger logger =Logger.getLogger(appointmentDao.class.getName());
+
     public String getAppointmentDeatils(appointmentSetter am) throws SQLException
     {
         String email=am.getEmail();
@@ -31,6 +34,7 @@ public class appointmentDao {
         int id=0;
         if(res.next())
         {
+            logger.info("found the patient id");
             id=res.getInt("pateintId");
         }
         String query3="select doctor_details.first_name,doctor_details.address,doctor_details.place_of_working,"

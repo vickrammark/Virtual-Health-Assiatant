@@ -756,12 +756,12 @@
                                         <div class='prescriptionContainerDetails'>     \n\
                                         <div class='form-group morning'><label>Morning Medicine :</label><input type='text' placeholder='Medicine' class='form-control' id='morningMedicine' name='morningMedicine'></div>\n\
                                         <div class='form-group '><label>Timing for morning medicine : </label><select class='morningTime form-control'><option value='After Breakfast'>After Breakfast</option><option value='Before Breakfast'>Before Breakfast</option></select></div>\n\
-                                         <div class='form-group morning'><label>Noon Medicine :</label><input type='text' placeholder='Medicine' class='form-control' id='noonMedicine' name='noonMedicine'></div>\n\  \n\
+                                        <div class='form-group morning'><label>Noon Medicine :</label><input type='text' placeholder='Medicine' class='form-control' id='noonMedicine' name='noonMedicine'></div>\n\  \n\
                                         <div class='form-group'><label>Timing for noon medicine : </label><select class='noonTime form-control'><option value='After Lunch'>After Lunch</option><option value='Before Lunch'>Before Lunch</option></select></div>\n\
                                         <div class='form-group morning'><label>Night Medicine</label><input type='text' placeholder='Medicine' class='form-control' id='nightMedicine' name='nightMedicine'></div>\n\
                                         <div class='form-group'><label>Timing for night medicine : </label><select class='nightTime form-control'><option value='After dinner'>After dinner</option><option value='Before dinner'>Before dinner</option></select></div> \n\
-                                        <div class='form-group'><label>Posible Cause of problem : </label><select class=''> \n\
-                                        <div class=form-g> \n\\n\
+                                        <div class='form-group'><label>Posible Cause of problem : </label><input class='cause form-control' id='causeProblem' name='causeProblem' type='text' placeholder='Cause of Problem' required> \n\
+                                        <div class='form-group'><label>Procedure to be followed : </label><input class='procedure form-control' id='procedure' name='procedure' type='text' placeholder='Procedure to be followed' required></div>\n\
                                         <div class='presSender'><button class='btn btn-primary presSendDetails'>Send</button><button class='btn btn-danger backPager' id='"+AppointmentDetailArray1[5]+"'>Back</button></div>   \n\
                                         </div>    \n\
                                  </div>       \n\ "
@@ -958,7 +958,7 @@
                          },
                          success: function (data, textStatus, jqXHR) {
                           }
-                     })
+                     });
                  }
         </script>
     </body>

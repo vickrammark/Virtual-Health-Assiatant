@@ -48,7 +48,6 @@ public class AppointmentFixerandCancelerController extends HttpServlet {
         try {
                 result=ad.setAcceptRequest(ar);
             } catch (Exception ex) {
-               out.println(ex.getMessage());
             }
             resp.setContentType("text/length");
             resp.getWriter().write(result);
