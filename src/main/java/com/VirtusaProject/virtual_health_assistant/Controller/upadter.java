@@ -9,14 +9,12 @@ package com.VirtusaProject.virtual_health_assistant.Controller;
 import com.VirtusaProject.virtual_health_assitant.dao.nameRetriver;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.apache.log4j.Logger;
 
 /**
  *
@@ -24,7 +22,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(urlPatterns = {"/upadter"})
 public class upadter extends HttpServlet {
-
+       static final Logger logs=Logger.getLogger(upadter.class);
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
             
@@ -85,14 +83,16 @@ public class upadter extends HttpServlet {
             {
                 resp.setContentType("text/html");
                 resp.getWriter().write("Update Successfully");
+                logs.info("Patient details successfully updated");
             }
             else
             {
                 resp.setContentType("text/html");
+                logs.info("Patient details are not updated");
                 resp.getWriter().write("Sorry Not Update Successfully");
             }
         } catch (Exception ex) {
-            out.println(ex.getMessage()+","+address);
+            logs.error("patient deails updating process --> error="+ex.getMessage());
         }
        }
         else if(role.equals("doctor"))
@@ -113,8 +113,9 @@ public class upadter extends HttpServlet {
         String result="false";
             try {
                 result=nm.updator_docotor(Fname, Lname, birthdate, address, placeName, email, phonenumber, sex, specialization, qualifiaction, experience, mainEmail);
+                logs.info("Doctor details updated sucessfully");
             } catch (Exception ex) {
-               out.println(ex.getMessage());
+               logs.error("Doctor details not updated -->Error="+ex.getMessage());
             }
             resp.setContentType("text/html");
             resp.getWriter().write("success");
