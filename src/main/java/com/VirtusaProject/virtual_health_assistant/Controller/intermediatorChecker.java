@@ -18,8 +18,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -31,6 +29,7 @@ import javax.ws.rs.core.Request;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.apache.log4j.Logger;
 
 /**
  *
@@ -61,6 +60,7 @@ public class intermediatorChecker extends HttpServlet {
         
         String photo=null;
         InputStream input=null;
+        static final Logger logs6=Logger.getLogger(intermediatorChecker.class);
   
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -167,8 +167,10 @@ public class intermediatorChecker extends HttpServlet {
               HttpSession session=req.getSession();
             try {
                 ans = ch.checkUser(Fname, email, password, role, out);
+                logs6.info("Patient details has been verified");
             } catch (Exception ex) {
                 out.println(ex.getMessage());
+                logs6.error("Patient details has  been not verified -->Error="+ex.getMessage());
             }
               out.println(ans+",Name="+Fname+",Email="+email+",Password="+password+",Role="+role+",sex="+sex);
               if(!ans)
@@ -191,6 +193,7 @@ public class intermediatorChecker extends HttpServlet {
               }
               else
               {
+                  logs6.info("patient already exist");
                   out.println("hello"+ans);
                  session.setAttribute("message","false");
                 resp.sendRedirect("/patientRegistration.jsp");
@@ -198,6 +201,7 @@ public class intermediatorChecker extends HttpServlet {
           }
           catch(Exception ex)
           {
+              logs6.error("patient Details reteriving --> Error="+ex.getMessage());
               out.println(ex.getMessage());
           }
           

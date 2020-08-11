@@ -10,14 +10,12 @@ import com.VirtusaProject.virtual_health_assitant.dao.bookingDao;
 import com.VirtusaProject.virtual_health_assistant.modal.bookingModal;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.apache.log4j.Logger;
 
 /**
  *
@@ -25,7 +23,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "bookingControlller", urlPatterns = {"/bookingControlller"})
 public class bookingControlller extends HttpServlet {
-
+      static final Logger logs2=Logger.getLogger(bookingControlller.class);
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
             String docId=req.getParameter("doctorId");
@@ -41,8 +39,10 @@ public class bookingControlller extends HttpServlet {
             String result="";
         try {
             result=bk.setBookingDeails(bm);
+            logs2.info("Booking has been done successfully");
         } catch (Exception ex) {
             out.println(ex.getMessage());
+            logs2.info("Booking not done -->Error="+ex.getMessage());
         }
          resp.setContentType("text/html");
          if(result.equals("success"))

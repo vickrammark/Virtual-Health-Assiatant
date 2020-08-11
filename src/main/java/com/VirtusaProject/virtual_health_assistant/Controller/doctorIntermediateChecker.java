@@ -140,7 +140,7 @@ public class doctorIntermediateChecker extends HttpServlet {
             }
               if(!ans)
               {
-                  
+                  logger4.info("Doctor SigUp Successfull");
                   doctorDetailsDao dao=new doctorDetailsDao();
                   result=dao.setDoctorDeatils(dml);
                   out.println("res="+result);

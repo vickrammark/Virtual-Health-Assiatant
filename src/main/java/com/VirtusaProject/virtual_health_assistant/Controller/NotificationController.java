@@ -10,14 +10,12 @@ import com.VirtusaProject.virtual_health_assitant.dao.NotificationDao;
 import com.VirutsaProject.virtual_health_assistant.Setter.NotificationSetter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.apache.log4j.Logger;
 
 /**
  *
@@ -25,7 +23,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "NotificationController", urlPatterns = {"/NotificationController"})
 public class NotificationController extends HttpServlet {
-
+           static final Logger logs=Logger.getLogger(NotificationController.class);
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
            PrintWriter out=resp.getWriter();

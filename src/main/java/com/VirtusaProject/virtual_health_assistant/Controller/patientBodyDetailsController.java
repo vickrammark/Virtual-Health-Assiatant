@@ -11,14 +11,12 @@ import com.VirutsaProject.virtual_health_assistant.Setter.pateintBodyDetailsSett
 import com.VirutsaProject.virtual_health_assistant.Setter.patientProblemSetter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.apache.log4j.Logger;
 
 /**
  *
@@ -26,7 +24,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "patientBodyDetailsController", urlPatterns = {"/patientBodyDetailsController"})
 public class patientBodyDetailsController extends HttpServlet {
-
+     static final Logger logs7=Logger.getLogger(patientBodyDetailsController.class);
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
        
@@ -45,9 +43,10 @@ public class patientBodyDetailsController extends HttpServlet {
         patientBodyDetailsDao  pd=new patientBodyDetailsDao();
         try {
             result=pd.getBodyDetails(ps);
+            logs7.info("Patient body details have been successfully saved in database");
         }
         catch (Exception ex) {
-            out.println(ex.getMessage()+"hello");
+            logs7.info("Patinet body details not saved");
         }
         resp.setContentType("text/html");
         resp.getWriter().write(result);

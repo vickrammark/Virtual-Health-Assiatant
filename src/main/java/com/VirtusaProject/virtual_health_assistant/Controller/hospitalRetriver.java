@@ -7,14 +7,12 @@ package com.VirtusaProject.virtual_health_assitant.dao;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.apache.log4j.Logger;
 
 /**
  *
@@ -22,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "hospitalRetriver", urlPatterns = {"/hospitalRetriver"})
 public class hospitalRetriver extends HttpServlet {
-
+    static final Logger logs5=Logger.getLogger(hospitalRetriver.class);
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
           
@@ -36,8 +34,10 @@ public class hospitalRetriver extends HttpServlet {
         String result="";
         try {
             result=hp.getHospitalDeatils(place_name, specName);
+            logs5.info("Hospital details has been obtained successfully");
         } catch (Exception ex) {
            out.println(ex.getMessage());
+           logs5.error("Hospital details cannot be retrived --> error="+ex.getMessage());
         }
         resp.setContentType("text/html");
         resp.getWriter().write(result);
@@ -50,8 +50,9 @@ public class hospitalRetriver extends HttpServlet {
             String result="";
             try {
                 result=hp.getDoctors(specName, hospitalId);
+                logs5.info("Doctor Details from hospitals has been obtained successfully");
             } catch (Exception ex) {
-                out.println(ex.getMessage());
+                logs5.error("Doctor details are not obtained -->Error="+ex.getMessage());
             }
             resp.setContentType("text/html");
             resp.getWriter().write(result);

@@ -47,24 +47,26 @@ public class pageDirector extends HttpServlet {
                 
                 if(role.equals("doctor"))
                 {
-                    logger.info("doctor succesfully signed in");
+                    logger.info("doctor successfully signed in");
                     session.setAttribute("message",email); 
                     resp.sendRedirect("doctorChooser.jsp");
                 }
                 else if(role.equals("patient"))
                 { 
+                    logger.info("Patient successfully signed in");
                     session.setAttribute("message",email); 
                     resp.sendRedirect("PateintChooser.jsp");
                 }
                 else if(role.equals("lab technician"))
                 {
-                    
+                    logger.info("Lab Technician successfully signed in");
                     session.setAttribute("message",email); 
                     resp.sendRedirect("/labChooser.jsp");
                 }
             }
             else
             {
+                logger.info("Sign in failed");
                 String result="false";
                 req.setAttribute("message",result);
                 RequestDispatcher rd=req.getRequestDispatcher("/Login.jsp");
