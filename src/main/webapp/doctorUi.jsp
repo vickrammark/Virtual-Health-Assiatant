@@ -41,7 +41,7 @@
                        <a class="nav-link" href="logOut.jsp" style="color: white;font-size:20px;font-weight:bold">LogOut</a>
                    </div>                   
                    <div class="nav-item">
-                       <a class="nav-link" href="signUpSelector.jsp" style="color: white;font-size:20px;font-weight:bold">SignUp</a>
+                       <a class="nav-link" href="#" style="color: white;font-size:20px;font-weight:bold">Donate Us</a>
                    </div>
                 </div>
           </nav>
@@ -753,16 +753,17 @@
                                              \n\
                                  </div> \n\
                                  <div class='prescriptionDetials"+AppointmentDetailArray1[5]+"  disappear col-lg-9' id='"+AppointmentDetailArray1[5]+"'>\n\
+                                        <div class='alert alert-success successMed"+AppointmentDetailArray1[5]+"'>Sucessfully sent the detials</div>\n\
                                         <div class='prescriptionContainerDetails'>     \n\
-                                        <div class='form-group morning'><label>Morning Medicine :</label><input type='text' placeholder='Medicine' class='form-control' id='morningMedicine' name='morningMedicine'></div>\n\
-                                        <div class='form-group '><label>Timing for morning medicine : </label><select class='morningTime form-control'><option value='After Breakfast'>After Breakfast</option><option value='Before Breakfast'>Before Breakfast</option></select></div>\n\
-                                        <div class='form-group morning'><label>Noon Medicine :</label><input type='text' placeholder='Medicine' class='form-control' id='noonMedicine' name='noonMedicine'></div>\n\  \n\
-                                        <div class='form-group'><label>Timing for noon medicine : </label><select class='noonTime form-control'><option value='After Lunch'>After Lunch</option><option value='Before Lunch'>Before Lunch</option></select></div>\n\
-                                        <div class='form-group morning'><label>Night Medicine</label><input type='text' placeholder='Medicine' class='form-control' id='nightMedicine' name='nightMedicine'></div>\n\
-                                        <div class='form-group'><label>Timing for night medicine : </label><select class='nightTime form-control'><option value='After dinner'>After dinner</option><option value='Before dinner'>Before dinner</option></select></div> \n\
-                                        <div class='form-group'><label>Posible Cause of problem : </label><input class='cause form-control' id='causeProblem' name='causeProblem' type='text' placeholder='Cause of Problem' required> \n\
-                                        <div class='form-group'><label>Procedure to be followed : </label><input class='procedure form-control' id='procedure' name='procedure' type='text' placeholder='Procedure to be followed' required></div>\n\
-                                        <div class='presSender'><button class='btn btn-primary presSendDetails'>Send</button><button class='btn btn-danger backPager' id='"+AppointmentDetailArray1[5]+"'>Back</button></div>   \n\
+                                        <div class='form-group morning'><label>Morning Medicine :</label><input type='text' placeholder='Medicine' class='form-control' id='morningMedicine"+AppointmentDetailArray1[5]+"' name='morningMedicine'></div>\n\
+                                        <div class='form-group '><label>Timing for morning medicine : </label><select class='morningTime"+AppointmentDetailArray1[5]+" form-control'><option value='After Breakfast'>After Breakfast</option><option value='Before Breakfast'>Before Breakfast</option></select></div>\n\
+                                        <div class='form-group morning'><label>Noon Medicine :</label><input type='text' placeholder='Medicine' class='form-control' id='noonMedicine"+AppointmentDetailArray1[5]+"' name='noonMedicine'></div>\n\  \n\
+                                        <div class='form-group'><label>Timing for noon medicine : </label><select class='noonTime"+AppointmentDetailArray1[5]+" form-control'><option value='After Lunch'>After Lunch</option><option value='Before Lunch'>Before Lunch</option></select></div>\n\
+                                        <div class='form-group morning'><label>Night Medicine</label><input type='text' placeholder='Medicine' class='form-control' id='nightMedicine"+AppointmentDetailArray1[5]+"' name='nightMedicine'></div>\n\
+                                        <div class='form-group'><label>Timing for night medicine : </label><select class='nightTime"+AppointmentDetailArray1[5]+" form-control'><option value='After dinner'>After dinner</option><option value='Before dinner'>Before dinner</option></select></div> \n\
+                                        <div class='form-group'><label>Possible Cause of problem : </label><input class='cause form-control' id='causeProblem"+AppointmentDetailArray1[5]+"' name='causeProblem' type='text' placeholder='Cause of Problem' required> \n\
+                                        <div class='form-group'><label>Procedure to be followed : </label><input class='procedure form-control' id='procedure"+AppointmentDetailArray1[5]+"' name='procedure' type='text' placeholder='Procedure to be followed' required></div>\n\
+                                        <div class='presSender'><button class='btn btn-primary presSendDetails' id='"+AppointmentDetailArray1[5]+"'>Send</button><button class='btn btn-danger backPager' id='"+AppointmentDetailArray1[5]+"'>Back</button></div>   \n\
                                         </div>    \n\
                                  </div>       \n\ "
                                      
@@ -781,6 +782,40 @@
                        
                   });
                }); 
+               $(document).on("click",".presSendDetails",function(){
+                  var id=$(this).attr("id");
+                  var mornMed=$("#morningMedicine"+id).val();
+                  var mornTime=$(".morningTime"+id).val();
+                  var noonMed=$("#noonMedicine"+id).val();
+                  var noonTime=$(".noonTime"+id).val();
+                  var nightMed=$("#nightMedicine"+id).val();
+                  var nightTime=$(".nightTime"+id).val();
+                  var prob=$("#causeProblem"+id).val();
+                  var procedure=$("#procedure"+id).val();
+                  $.ajax({
+                     type:"POST",
+                     url:"medicineSavingController",
+                     data:{
+                         mornMed:mornMed,
+                         mornTime:mornTime,
+                         noonMed:noonMed,
+                         noonTime:noonTime,
+                         nightMedicine:nightMed,
+                         nightTime:nightTime,
+                         problem:prob,
+                         procedure:procedure,
+                         id:id
+                     },
+                     success: function (data, textStatus, jqXHR) {
+                         alert(data);
+                         if(data==="true")
+                         {
+                             $(".successMed"+id).fadeIn(1000).css("display","block");
+                         }
+                     }
+                  });                  
+               });
+               
                $(document).on("click",".note",function(){
                    var id=$(this).attr("id");
                    $(".appointmentDividingContainer1").css("display","none");
@@ -813,9 +848,6 @@
                   var id=$(this).attr("id");
                  $(".prescriptionDetials"+id).css("display","block");
                  $(".appointmentDividingContainer1").css("display","none");
-                 $.ajax({
-                     
-                 });
               }); 
                var acceptId;
                $(document).on("click",".accept",function(){
