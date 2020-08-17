@@ -5,12 +5,16 @@
  */
 package com.VirtusaProject.virtual_health_assistant.Controller;
 
-import com.VirtusaProject.virtual_health_assistant.modal.patientBodyDetailsModal;
+import com.VirtusaProject.virtual_health_assistant.Setter.patientBodyDetailsModal;
 import com.VirtusaProject.virtual_health_assitant.dao.patientBodyDetailsDao;
-import com.VirutsaProject.virtual_health_assistant.Setter.pateintBodyDetailsSetter;
-import com.VirutsaProject.virtual_health_assistant.Setter.patientProblemSetter;
+import com.VirtusaProject.virtual_health_assitant.dao.patientPrescriptionDao;
+import com.VirutsaProject.virtual_health_assistant.Modal.pateintBodyDetailsSetter;
+import com.VirutsaProject.virtual_health_assistant.Modal.patientPrescription;
+import com.VirutsaProject.virtual_health_assistant.Modal.patientProblemSetter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.logging.Level;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -64,6 +68,20 @@ public class patientBodyDetailsController extends HttpServlet {
             }
            resp.setContentType("text/html");
            resp.getWriter().write(result);
+      }
+      else if(function.equals("prescript"))
+      {
+          String id=req.getParameter("presId");
+          patientPrescription pp=new patientPrescription(id);
+          patientPrescriptionDao pd=new patientPrescriptionDao();
+            try {
+                result=pd.getPrescription(pp);
+            } catch (Exception ex) 
+            {
+                logs7.error("Prescription Not Found-->Error="+ex.getMessage());
+            }
+            resp.setContentType("text/html");
+            resp.getWriter().write(result);
       }
    }
 }

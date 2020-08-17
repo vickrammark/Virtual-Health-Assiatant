@@ -6,8 +6,8 @@
 package com.VirtusaProject.virtual_health_assitant.dao;
 
 import com.VirtusaProject.virtual_health_assistant.util.dataBaseConnection;
-import com.VirtusaProject.virtual_health_assistant.modal.LoginDetailsModal;
-import com.VirutsaProject.virtual_health_assistant.Setter.loginDetailsSetter;
+import com.VirtusaProject.virtual_health_assistant.Setter.LoginDetailsModal;
+import com.VirutsaProject.virtual_health_assistant.Modal.loginDetailsSetter;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

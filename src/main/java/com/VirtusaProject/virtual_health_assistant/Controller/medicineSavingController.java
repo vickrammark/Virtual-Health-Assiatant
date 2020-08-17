@@ -6,7 +6,7 @@
 package com.VirtusaProject.virtual_health_assistant.Controller;
 
 import com.VirtusaProject.virtual_health_assitant.dao.medicineSaverDao;
-import com.VirutsaProject.virtual_health_assistant.Setter.medicineSaverSetter;
+import com.VirutsaProject.virtual_health_assistant.Modal.medicineSaverSetter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -33,7 +33,7 @@ public class medicineSavingController extends HttpServlet {
             String noonTime=req.getParameter("noonTime");
             String nightMedicine=req.getParameter("nightMedicine");
             String nightTime=req.getParameter("nightTime");
-            String problem=req.getParameter("prob");
+            String problem=req.getParameter("problem");
             String procedure=req.getParameter("procedure");
             medicineSaverSetter ms=new medicineSaverSetter(id, morningMedicine, morningTime, noonMedicine, noonTime, nightMedicine, nightTime, problem, procedure);
             String result="false";

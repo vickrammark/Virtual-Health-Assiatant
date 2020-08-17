@@ -6,7 +6,7 @@
 package com.VirtusaProject.virtual_health_assitant.dao;
 
 import com.VirtusaProject.virtual_health_assistant.util.dataBaseConnection;
-import com.VirutsaProject.virtual_health_assistant.Setter.medicineSaverSetter;
+import com.VirutsaProject.virtual_health_assistant.Modal.medicineSaverSetter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;

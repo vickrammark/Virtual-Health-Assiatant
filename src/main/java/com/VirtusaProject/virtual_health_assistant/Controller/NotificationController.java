@@ -5,9 +5,9 @@
  */
 package com.VirtusaProject.virtual_health_assistant.Controller;
 
-import com.VirtusaProject.virtual_health_assistant.modal.NotificationModal;
+import com.VirtusaProject.virtual_health_assistant.Setter.NotificationModal;
 import com.VirtusaProject.virtual_health_assitant.dao.NotificationDao;
-import com.VirutsaProject.virtual_health_assistant.Setter.NotificationSetter;
+import com.VirutsaProject.virtual_health_assistant.Modal.NotificationSetter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;

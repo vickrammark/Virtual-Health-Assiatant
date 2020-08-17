@@ -6,17 +6,16 @@
  */
 package com.VirtusaProject.virtual_health_assistant.util;
 
-import com.VirtusaProject.virtual_health_assistant.modal.LoginDetailsModal;
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import javax.servlet.http.HttpServlet;
+import org.apache.log4j.Logger;
 
 
 public class dataBaseConnection extends HttpServlet{
     
-    
+    static final Logger logs=Logger.getLogger(dataBaseConnection.class);
     public Connection getConnection() throws SQLException
     {   
         Connection con=null;
@@ -31,6 +30,7 @@ public class dataBaseConnection extends HttpServlet{
         }
         catch(Exception ex)
         {
+            logs.error("database connection failed -->Error="+ex.getMessage());
         }
         return con;
     }

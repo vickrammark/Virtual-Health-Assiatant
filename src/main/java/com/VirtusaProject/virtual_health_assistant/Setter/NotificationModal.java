@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.VirtusaProject.virtual_health_assistant.modal;
+package com.VirtusaProject.virtual_health_assistant.Setter;
 
-import com.VirutsaProject.virtual_health_assistant.Setter.NotificationSetter;
+import com.VirutsaProject.virtual_health_assistant.Modal.NotificationSetter;
 import javax.management.Notification;
 
 /**

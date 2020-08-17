@@ -6,7 +6,7 @@
 package com.VirtusaProject.virtual_health_assitant.dao;
 
 import com.VirtusaProject.virtual_health_assistant.util.dataBaseConnection;
-import com.VirutsaProject.virtual_health_assistant.Setter.appointmentSetter;
+import com.VirutsaProject.virtual_health_assistant.Modal.appointmentSetter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

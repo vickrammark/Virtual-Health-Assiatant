@@ -1,10 +1,10 @@
 package com.VirtusaProject.virtual_health_assistant.Controller;
 
-import com.VirutsaProject.virtual_health_assistant.Setter.doctorDeatilsSetter;
+import com.VirutsaProject.virtual_health_assistant.Modal.doctorDeatilsSetter;
 import com.VirtusaProject.virtual_health_assitant.dao.checkUser;
 import com.VirtusaProject.virtual_health_assistant.util.dataBaseConnection;
 import com.VirtusaProject.virtual_health_assitant.dao.doctorDetailsDao;
-import com.VirtusaProject.virtual_health_assistant.modal.doctorDetailsModal;
+import com.VirtusaProject.virtual_health_assistant.Setter.doctorDetailsModal;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;

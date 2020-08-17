@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.VirutsaProject.virtual_health_assistant.Setter;
+package com.VirutsaProject.virtual_health_assistant.Modal;
 
-import com.VirtusaProject.virtual_health_assistant.modal.patientDetailsModal;
+import com.VirtusaProject.virtual_health_assistant.Setter.patientDetailsModal;
 import java.io.InputStream;
 
 /**

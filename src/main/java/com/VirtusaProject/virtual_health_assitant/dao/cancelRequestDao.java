@@ -1,7 +1,7 @@
 package com.VirtusaProject.virtual_health_assitant.dao;
 
 import com.VirtusaProject.virtual_health_assistant.util.dataBaseConnection;
-import com.VirutsaProject.virtual_health_assistant.Setter.cancelRequestSetter;
+import com.VirutsaProject.virtual_health_assistant.Modal.cancelRequestSetter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;

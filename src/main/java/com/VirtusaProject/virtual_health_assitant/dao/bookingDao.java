@@ -5,7 +5,7 @@
  */
 package com.VirtusaProject.virtual_health_assitant.dao;
 
-import com.VirutsaProject.virtual_health_assistant.Setter.bookingSetter;
+import com.VirutsaProject.virtual_health_assistant.Modal.bookingSetter;
 import com.VirtusaProject.virtual_health_assistant.util.dataBaseConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

@@ -1,6 +1,6 @@
-package com.VirutsaProject.virtual_health_assistant.Setter;
+package com.VirutsaProject.virtual_health_assistant.Modal;
 
-import com.VirtusaProject.virtual_health_assistant.modal.LoginDetailsModal;
+import com.VirtusaProject.virtual_health_assistant.Setter.LoginDetailsModal;
 
 /*
  * To change this license header, choose License Headers in Project Properties.

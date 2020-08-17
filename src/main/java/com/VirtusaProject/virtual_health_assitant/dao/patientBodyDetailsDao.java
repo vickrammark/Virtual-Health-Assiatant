@@ -6,8 +6,8 @@
 package com.VirtusaProject.virtual_health_assitant.dao;
 
 import com.VirtusaProject.virtual_health_assistant.util.dataBaseConnection;
-import com.VirutsaProject.virtual_health_assistant.Setter.pateintBodyDetailsSetter;
-import com.VirutsaProject.virtual_health_assistant.Setter.patientProblemSetter;
+import com.VirutsaProject.virtual_health_assistant.Modal.pateintBodyDetailsSetter;
+import com.VirutsaProject.virtual_health_assistant.Modal.patientProblemSetter;
 import com.mysql.cj.xdevapi.PreparableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

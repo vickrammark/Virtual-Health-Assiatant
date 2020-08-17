@@ -5,9 +5,9 @@
  */
 package com.VirtusaProject.virtual_health_assistant.Controller;
 
-import com.VirtusaProject.virtual_health_assistant.modal.appointmentModal;
+import com.VirtusaProject.virtual_health_assistant.Setter.appointmentModal;
 import com.VirtusaProject.virtual_health_assitant.dao.appointmentDao;
-import com.VirutsaProject.virtual_health_assistant.Setter.appointmentSetter;
+import com.VirutsaProject.virtual_health_assistant.Modal.appointmentSetter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;

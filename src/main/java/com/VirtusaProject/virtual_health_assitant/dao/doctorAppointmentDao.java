@@ -5,9 +5,9 @@
  */
 package com.VirtusaProject.virtual_health_assitant.dao;
 
-import com.VirtusaProject.virtual_health_assistant.modal.doctorAppointmentModal;
+import com.VirtusaProject.virtual_health_assistant.Setter.doctorAppointmentModal;
 import com.VirtusaProject.virtual_health_assistant.util.dataBaseConnection;
-import com.VirutsaProject.virtual_health_assistant.Setter.doctorAppointmentSetter;
+import com.VirutsaProject.virtual_health_assistant.Modal.doctorAppointmentSetter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

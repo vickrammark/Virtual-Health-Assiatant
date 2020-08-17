@@ -6,7 +6,7 @@
 package com.VirtusaProject.virtual_health_assitant.dao;
 
 import com.VirtusaProject.virtual_health_assistant.util.dataBaseConnection;
-import com.VirtusaProject.virtual_health_assistant.modal.doctorDetailsModal;
+import com.VirtusaProject.virtual_health_assistant.Setter.doctorDetailsModal;
 import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

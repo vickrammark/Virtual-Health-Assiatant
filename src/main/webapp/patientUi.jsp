@@ -44,7 +44,7 @@
                 </div>
           </nav>
         </div>    
-        <div class="row row1">
+        <div class="row row1 m-0">
             <div class="menu col-lg-3 col-sm-3 col-xs-2">
                 <span class="menuOpener"><img class="imgMenu" src="images/menuLogo.png" style="width:20px;height:20px"/>Menu</span>
             </div>
@@ -65,7 +65,7 @@
                     <a href="#" class="profileLink">Profile<span style='font-size:15px;margin-left:6px'>&#10087;</span></a>
                 </div>
                 <div class="doctor menuitems">
-                    <a href="#" class="doctorLink">Your Doctors<span style='font-size:15px;margin-left:6px'>&#10087;</span></a>
+                    <a href="#" class="doctorLink">Your Doctors<span class="docnotifiactions badge badge-pill badge-primary"></span><span style='font-size:15px;margin-left:6px'>&#10087;</span></a>
                 </div>
                 <div class="result menuitems">
                     <a href="#" class="resultLink">Lab Results<span style='font-size:15px;margin-left:6px'>&#10087;</span></a>
@@ -89,7 +89,7 @@
                    </div>
       
                     <div class=" card " >
-                        <img class="card-img-top" src="images/specialization.jpg" style="width:100%;height:200px">   
+                        <img class="card-img-top" src="images/KnowMoreSpec.jpg" style="width:100%;height:200px">   
                     <div class="card-body">
                         <h5 class="card-header">Know More About Specialization</h5>
                         <p class="card-text">
@@ -222,9 +222,9 @@
                </form>
                 </div>
                 <div class="specializationContainer">
-        <p style="font-size:20px;" class="mapper mainPageMapper"><span style="font-size:20px;margin-left:6px"><</span>Go Back</p>
+        <p style="font-size:20px;" class="mapper mainPageMapper"><span style="font-size:20px;margin-left:6px"></span>Go Back</p>
                     <div class="specializationOption">
-                        <h3>Please choose the specialization</h3>
+                        <h3 class='specHeader'>Please choose the specialization</h3>
                         <div class="con"> 
                         <div class="eyeContainer option" id="eye">
                             <div class="Img" >
@@ -301,7 +301,7 @@
                   </div>
                 <div class="hospitalContainer">
                     <div class="hospitalBodyContainer"> 
-        <p style="font-size:20px;" class="mapper specializationMapper"><span style="font-size:20px;margin-left:6px"><</span>Go Back</p>
+        <p style="font-size:20px;" class="mapper specializationMapper"><span style="font-size:20px;margin-left:6px"></span>Go Back</p>
                     <div class="searchCotainer">                           
                     <div class="form-group col-lg-4">
                         <label for="placeSearcher">Select your place:</label>
@@ -318,13 +318,13 @@
                     
             </div>
                 <div class="doctorContainer">
-        <p style="font-size:20px;" class="mapper doctorChoosingMapper"><span style="font-size:20px;margin-left:6px"><</span>Go Back</p>                    
+        <p style="font-size:20px;" class="mapper doctorChoosingMapper"><span style="font-size:20px;margin-left:6px"></span>Go Back</p>                    
                     <div class="doctorContent">
                                                                          
                     </div>
                 </div>  
               <div class="appointmentContainer">
-        <p style="font-size:20px;" class="mapper appointmentChoosingMapper"><span style="font-size:20px;margin-left:6px"><</span>Go Back</p>                    
+        <p style="font-size:20px;" class="mapper appointmentChoosingMapper"><span style="font-size:20px;margin-left:6px"></span>Go Back</p>                    
                   <div class="appointmentContent">
                   </div>
               </div>
@@ -338,7 +338,6 @@
                                 
                             </div>
                             <div class="prescriptionDetials">
-                                
                             </div>
                         </div>
                     </div>     
@@ -528,7 +527,9 @@
                   $(".doctorContainer").css("display","none");
                   $(".appointmentContainer").css("display","none");       
                   $(".myDoctorContainer").css("display","none");
-                  
+                  $(".noteContainer").css("display","none");
+                  $(".prescriptionDetials").css("display","none");      
+                         
             }
             });                
             });
@@ -543,6 +544,9 @@
                $(".doctorContainer").css("display","none");
                $(".appointmentContainer").css("display","none"); 
                $(".myDoctorContainer").css("display","none");
+               $(".noteContainer").css("display","none");
+               $(".prescriptionDetials").css("display","none");      
+                            
                
               });
              $(".appointmentChoosingMapper").on("click",function(){
@@ -569,6 +573,9 @@
                $(".doctorContainer").css("display","none");
                $(".appointmentContainer").css("display","none");
                $(".myDoctorContainer").css("display","none");
+               $(".noteContainer").css("display","none");
+               $(".prescriptionDetials").css("display","none");      
+                         
                
               });
               
@@ -635,9 +642,10 @@
                $(".doctorContainer").css("display","none");
                $(".hospitalContent").html("please select the cities to know the hospital and book you doctors!!!");});
                $(".appointmentContainer").css("display","none"); 
-               $(".myDoctorContainer").css("display","none");
-               
-               $(".placeSearcher").on("input",function(){
+               $(".myDoctorContainer").css("display","none"); 
+               $(".noteContainer").css("display","none");
+               $(".prescriptionDetials").css("display","none");                                              
+              $(".placeSearcher").on("input",function(){
                     var val=$(this).val();
                     if(val!=="")
                     {
@@ -744,6 +752,9 @@
                   $(".doctorContainer").css("display","block");
                   $(".hospitalContainer").css("display","none");
                   $(".myDoctorContainer").css("display","none");
+                  $(".noteContainer").css("display","none");
+                  $(".prescriptionDetials").css("display","none");      
+                              
                  var hid=$(this).attr("id");
                  var name=$(this).attr("name");
                  var imageArray=new Array();
@@ -1039,6 +1050,8 @@
                          $(".doctorContainer").css("display","none");
                          $(".hospitalContainer").css("display","none"); 
                          $(".myDoctorContainer").css("display","none");
+                         $(".noteContainer").css("display","none");
+                         $(".prescriptionDetials").css("display","none");      
                          var docImageArray=new Array();
                          var docDeatailArray=new Array();
                          var appointmentDeatilArray=new Array();
@@ -1149,7 +1162,26 @@
                            }
                          }
                       });  
-                    },500);   
+                    },500);  
+                      var docImageArray1=new Array();
+                     var docDeatailArray1=new Array();
+                     var appointmentDeatilArray1=new Array();
+                     $.ajax({
+                             type:"POST",
+                             url:"appointmentController",
+                             data:{
+                                 email:email,
+                                 function:"confirmed"
+                             },
+                             success: function (data, textStatus, jqXHR) {
+                                     if(data.includes("|"))
+                                     {
+                                         docDeatailArray1=data.split("|");
+                                         $(".docnotifiactions").html(""+docDeatailArray1.length-1+"");
+                                     }
+                               }
+                             });
+                          
                     $(".doctorLink").on("click",function(){
                         $(".appointmentContainer").css("display","none");
                          $(".profileContainer").css("display","none");
@@ -1161,9 +1193,8 @@
                          $(".doctorContainer").css("display","none");
                          $(".hospitalContainer").css("display","none"); 
                          $(".myDoctorContainer").css("display","block");
-                     var docImageArray1=new Array();
-                     var docDeatailArray1=new Array();
-                     var appointmentDeatilArray1=new Array();
+                         $(".noteContainer").css("display","none");
+                         $(".prescriptionDetials").css("display","none");
                         $(".noteContainer").css("display","none");
                         $(".fixedDoctorDetails").css("display","block");
                        $.ajax({
@@ -1188,7 +1219,7 @@
                                              <img class='profileDocImage1"+x+" prodocImage ' src=''>\n\
                                         </div>\n\
                                         <div class='docDetailContainer1'>\n\
-                                               <h4>Doctor Details1</h4> \n\
+                                               <h4>Doctor Details</h4> \n\
                                                      \n\
                                                 <div class='docDetail'>\n\
                                                      <p class='docName"+appointmentDeatilArray1[9]+"'id='"+appointmentDeatilArray1[0]+"'>Name : "+appointmentDeatilArray1[0]+"</p>   \n\
@@ -1204,7 +1235,7 @@
                                                </div>   \n\
                                         </div> \n\
                                         <div class='appointmentDetailContainer1'>\n\
-                                               <h4>AppointmentDetail</h4>  \n\
+                                               <h4>Appointment Details</h4>  \n\
                                                 <div class='appointmentDetail' id='"+appointmentDeatilArray1[9]+"'> \n\
                                                     <p class='AppoDate"+appointmentDeatilArray1[9]+"' id='"+appointmentDeatilArray1[10]+"'>Appointment Date : "+appointmentDeatilArray1[10]+"</p>    \n\
                                                     <p>Appointment Reason :"+appointmentDeatilArray1[11]+"</p>    \n\
@@ -1216,13 +1247,13 @@
 \n\
                                  <div class='assistContainer'>        \n\
                                       <div class='Note'  id='"+appointmentDeatilArray1[9]+"'>\n\
-                                            <button class='btn btn-warning chooser' id='"+appointmentDeatilArray1[9]+"'>Note for Doctors</button>\n\
+                                            <button class='btn btn-primary chooser' id='"+appointmentDeatilArray1[9]+"'>Note for Doctors</button>\n\
                                       </div>\n\
                                       <div class='prescription'  id='"+appointmentDeatilArray1[9]+"'>\n\
-                                            <button class='btn btn-warning chooser' id='"+appointmentDeatilArray1[9]+"'>Prescriptions</button>\n\
+                                            <button class='btn btn-primary chooser' id='"+appointmentDeatilArray1[9]+"'>Prescriptions <span class='prescNotification"+appointmentDeatilArray1[9]+" pills"+appointmentDeatilArray1[9]+" badge badge-pill badge-danger' style='font-size:15px'></span></button>\n\
                                       </div>\n\
                                       <div class='LabRecords'  id='"+appointmentDeatilArray1[9]+"'>\n\
-                                           <button class='btn btn-warning chooser' id='"+appointmentDeatilArray1[9]+"'>Your Records</button>\n\
+                                           <button class='btn btn-primary chooser' id='"+appointmentDeatilArray1[9]+"'>Your Records</button>\n\
                                       </div>\n\
                                              \n\
                                        <div class='RemoveButton1' id='"+appointmentDeatilArray1[9]+"'>\n\
@@ -1236,8 +1267,22 @@
                                 {
                                   $(".profileDocImage1"+y).attr("src","./pateintimageRetriver?email="+docImageArray1[y]+"&role=doctor");        
                                 }
-            
-                              }
+                                 $.ajax({
+                                    type:"POST",
+                                    url:"patientBodyDetailsController",
+                                    data:{
+                                      function:"prescript",
+                                      presId:appointmentDeatilArray1[9]
+                                     },
+                                     success: function (data, textStatus, jqXHR) {
+                                         if(data.includes(","))
+                                         {
+                                         $(".pills"+appointmentDeatilArray1[9]).css("displpay","flex");    
+                                         $(".prescNotification"+appointmentDeatilArray1[9]).html("1");
+                                         }
+                                       }
+                                   });      
+                              }  
                               else
                               {
                                 $(".fixedDoctorDetails").html("Sorry Currently No Appointments!!!");
@@ -1257,7 +1302,8 @@
                        $(".fixedDoctorDetails").css("display","none");
                        $(".noteContainer").css("display","block");
                        $(".noteContainer").html("\n\
-                                <div class='noteDetailsContainer'>  \n\
+                                <div class='noteDetailsContainer'> \n\
+                                 <h4 class='noteHeader'>Notes for Doctor</h4>        \n\
                                 <div class='alert alert-success detailsMessanger'>Hey,your details have been sent to your doctor</div>     \n\
                                 <div class='alert alert-danger detailsMessanger1'>Hey,Sorry a patient can have only one submission</div>     \n\
                                                       \n\
@@ -1265,40 +1311,79 @@
                                      <label for='reason'>\n\
                                             Enter the Issue : \n\
                                      </label>\n\
-                                     <textarea class='form-control' id='reason"+presId+"' name='reason'>\n\
+                                     <textarea class='form-control textarea1' id='reason"+presId+"' name='reason'>\n\
                                      </textarea>\n\
                                 </div>   \n\
-\n\                             <div class='form-group1'><label for='symptoms'>Enter the Symptoms : </label><textarea  class='form-control' id='Symptoms"+presId+"' name=symptoms' ></textarea></div>  \n\
-                                <div class='form-group1'><label for='effects'>Enter the Body Changes : </label><textarea class='form-control' id='effects"+presId+"' name='effects'></textarea></div> \n\
-                                <div class='form-group1'><label for='complication'>Enter if you have medical complications : </label><textarea class='form-control' id='complication"+presId+"' name='complication'></textarea></div> \n\
-                                <div class='buttonFixer'> \n\
+\n\                             <div class='form-group1'><label for='symptoms'>Enter the Symptoms : </label><textarea  class='form-control textarea1' id='Symptoms"+presId+"' name=symptoms' ></textarea></div>  \n\
+                                <div class='form-group1'><label for='effects'>Enter the Body Changes : </label><textarea class='form-control textarea1' id='effects"+presId+"' name='effects'></textarea></div> \n\
+                                <div class='form-group1'><label for='complication'>Enter if you have medical complications : </label><textarea class='form-control textarea1' id='complication"+presId+"' name='complication'></textarea></div> \n\
+                                </div> \n\
+\n\                             <div class='buttonFixer'> \n\
                                       <button class='btn btn-primary send1' id='"+presId+"'>Send</button> \n\
                                       <buton class='btn btn-danger backNote'>Back</button>          \n\
                                 </div>     \n\
-                                </div>  \n\
+  \n\
                         ");
                     });
-                    
-                    $(document).on("click",".backNote",function(){
-                          $(".fixedDoctorDetails").css("display","block");
-                       $(".noteContainer").css("display","none");
-                       $(".prescriptionDetials").css("display","none");
-                    });
                     $(document).on("click",".prescription",function(){
+                       $(".prescriptionDetials").css("display","flex");
+                       $(".fixedDoctorDetails").css("display","none");
                        $(".noteContainer").css("display","none");
-                       $(".prescriptionDetials").css("display","block");
                        var id=$(this).attr("id");
                        $.ajax({
                           type:"POST",
-                          url:"patientRemadyDetails",
+                          url:"patientBodyDetailsController",
                           data:{
-                             preId:id 
+                              function:"prescript",
+                              presId:id
                           },
                           success: function (data, textStatus, jqXHR) {
-                                 alert(data);      
+                               if(data.includes(","))
+                              {
+                                  
+                                  var patientMedicine=new Array();
+                                  patientMedicine=data.split(",");
+                                  
+                                 for(var x=0;x<patientMedicine.length;x++)
+                                  {    
+                                  if(patientMedicine[x]==="null")
+                                  {
+                                      patientMedicine[x]="Not Provided";
+                                  }
+                                  }
+                                  $(".prescriptionDetials").html(
+                                          
+                                     "   <h4 class='prescHeader' style='text-align:center'>Your Prescription</h4>  \
+                                         <div class='prescriptionDetailsContainer' id='"+patientMedicine[0]+"'>\n\
+                                         <div class='row'>      \n\
+                                         <div class='form-group col-lg-6 medMainContainer'><label class='labMed'>Morning Medicine :</label><br><div class='medContainer' id='morningMedicine"+patientMedicine[0]+"' ><span class='medContainer1  btn-primary' id='morningTime"+patientMedicine[0]+"' > "+patientMedicine[2]+"</span>"+patientMedicine[1]+" </div></div>\n\
+                                         <div class='form-group col-lg-6 medMainContainer'><label class='labMed'>Noon Medicine :</label><br><div class='medContainer' id='noonMedicine"+patientMedicine[0]+"'   > <span class='medContainer1  btn-primary' id='noonTime"+patientMedicine[0]+"'       >  "+patientMedicine[4]+"     </span>     "+patientMedicine[3]+"</div></div>     \n\
+                                         </div> \n\
+                                         <div class='row'>\n\
+                                         <div class='form-group col-lg-6 medMainContainer'><label class='labMed'>Night Medicine :</label><br><div class='medContainer' id='nightMedicine"+patientMedicine[0]+"'  > <span class='medContainer1  btn-primary' id='nightTime"+patientMedicine[0]+"'      >  "+patientMedicine[6]+"     </span>      "+patientMedicine[5]+"</div></div>     \n\
+                                         <div class='form-group col-lg-6 medMainContainer'><label class='labMed'>Cause of Problem :</label><br><div class='medContainer' id='problemCause"+patientMedicine[0]+"'   >  "+patientMedicine[7]+"    </div></div>      \n\
+                                         </div> \n\
+                                         <div class='row'>      \n\
+                                         <div class='form-group col-lg-6 medMainContainer'><label class='labMed'>Procedure :</label><br><div class='medContainer' id='procedure"+patientMedicine[0]+"'      >  "+patientMedicine[8]+"    </div></div>  \n\
+                                         </div>\n\
+                                         <div class='form-group backNote'><button class='btn btn-danger'>Back</button></div>             \n\
+                                            \n\
+                                         </div>" 
+                                  );
+                              }
+                              else
+                              {
+                                 $(".prescriptionDetials").html("Sorry there is no prescription availbale!!. Once your doctor post your prescription it will be available here<br> <div class='form-group backNote'><button class='btn btn-danger'>Back</button></div>");
+                              }
                           }
-                       });   
+                       });
+                       
                     });
+                 $(document).on("click",".backNote",function(){
+                    $(".fixedDoctorDetails").css("display","block");
+                    $(".noteContainer").css("display","none");
+                    $(".prescriptionDetials").css("display","none");
+                 });   
                  $(document).on("click",".send1",function(){
                      var id=$(this).attr("id");
                      var reason=$("#reason"+id).val();
@@ -1416,6 +1501,7 @@
                              function:function1
                          },
                          success: function (data, textStatus, jqXHR) {
+                          
                           }
                      });
                  }

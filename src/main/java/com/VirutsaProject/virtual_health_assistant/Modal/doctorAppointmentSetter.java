@@ -1,4 +1,4 @@
-package com.VirutsaProject.virtual_health_assistant.Setter;
+package com.VirutsaProject.virtual_health_assistant.Modal;
 public class doctorAppointmentSetter {
     private String email;    
 

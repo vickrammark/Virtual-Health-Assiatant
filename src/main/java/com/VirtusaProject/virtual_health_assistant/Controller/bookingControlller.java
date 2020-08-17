@@ -5,9 +5,9 @@
  */
 package com.VirtusaProject.virtual_health_assistant.Controller;
 
-import com.VirutsaProject.virtual_health_assistant.Setter.bookingSetter;
+import com.VirutsaProject.virtual_health_assistant.Modal.bookingSetter;
 import com.VirtusaProject.virtual_health_assitant.dao.bookingDao;
-import com.VirtusaProject.virtual_health_assistant.modal.bookingModal;
+import com.VirtusaProject.virtual_health_assistant.Setter.bookingModal;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;

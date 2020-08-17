@@ -43,7 +43,7 @@
           </nav>
         <div class="mainContainer container-fluid" >
             <div class="conatiner contentContainer col-lg-6 col-sm-6">
-                <h2>Please Signup According To You Role</h2>
+                <h2>Please Signup According To Your Role</h2>
                     <div class="patient"><a href="#cardContainer">Patient</a></div>            
                     <div class="doctor"><a href="#cardContainer">Doctor</a></div>
                     <div class="lab"><a href="#cardContainer">Lab Technician</a></div>

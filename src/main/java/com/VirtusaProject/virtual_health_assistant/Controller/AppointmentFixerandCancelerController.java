@@ -5,16 +5,16 @@
  */
 package com.VirtusaProject.virtual_health_assistant.Controller;
 
-import com.VirtusaProject.virtual_health_assistant.modal.acceptRequestModal;
-import com.VirtusaProject.virtual_health_assistant.modal.cancelRequestModal;
-import com.VirtusaProject.virtual_health_assistant.modal.updaterModal;
+import com.VirtusaProject.virtual_health_assistant.Setter.acceptRequestModal;
+import com.VirtusaProject.virtual_health_assistant.Setter.cancelRequestModal;
+import com.VirtusaProject.virtual_health_assistant.Setter.updaterModal;
 import com.VirtusaProject.virtual_health_assitant.dao.accpetRequestDao;
 import com.VirtusaProject.virtual_health_assitant.dao.cancelRequestDao;
 import com.VirtusaProject.virtual_health_assitant.dao.mailDao;
 import com.VirtusaProject.virtual_health_assitant.dao.updaterDao;
-import com.VirutsaProject.virtual_health_assistant.Setter.acceptRequestSetter;
-import com.VirutsaProject.virtual_health_assistant.Setter.cancelRequestSetter;
-import com.VirutsaProject.virtual_health_assistant.Setter.updaterSetter;
+import com.VirutsaProject.virtual_health_assistant.Modal.acceptRequestSetter;
+import com.VirutsaProject.virtual_health_assistant.Modal.cancelRequestSetter;
+import com.VirutsaProject.virtual_health_assistant.Modal.updaterSetter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;

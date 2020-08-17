@@ -5,11 +5,11 @@
  */
 package com.VirtusaProject.virtual_health_assistant.Controller;
 
-import com.VirtusaProject.virtual_health_assistant.modal.patientDetailsModal;
+import com.VirtusaProject.virtual_health_assistant.Setter.patientDetailsModal;
 import com.VirtusaProject.virtual_health_assitant.dao.checkUser;
 import com.VirtusaProject.virtual_health_assistant.util.dataBaseConnection;
 import com.VirtusaProject.virtual_health_assitant.dao.patientDetailsDao;
-import com.VirutsaProject.virtual_health_assistant.Setter.patientDataHelperSetter;
+import com.VirutsaProject.virtual_health_assistant.Modal.patientDataHelperSetter;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;

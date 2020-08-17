@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.VirtusaProject.virtual_health_assistant.modal;
+package com.VirtusaProject.virtual_health_assistant.Setter;
 
 import com.VirtusaProject.virtual_health_assistant.util.dataBaseConnection;
 

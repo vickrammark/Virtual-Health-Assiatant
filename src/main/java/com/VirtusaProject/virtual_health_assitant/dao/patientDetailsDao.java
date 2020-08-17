@@ -5,9 +5,9 @@
  */
 package com.VirtusaProject.virtual_health_assitant.dao;
 
-import com.VirtusaProject.virtual_health_assistant.modal.patientDetailsModal;
+import com.VirtusaProject.virtual_health_assistant.Setter.patientDetailsModal;
 import com.VirtusaProject.virtual_health_assistant.util.dataBaseConnection;
-import com.VirutsaProject.virtual_health_assistant.Setter.patientDataHelperSetter;
+import com.VirutsaProject.virtual_health_assistant.Modal.patientDataHelperSetter;
 import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
