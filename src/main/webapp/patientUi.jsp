@@ -96,10 +96,10 @@
                             To know more about the specialization we provide click below
                         </p>
                     </div>
-                    <button class="btn btn-primary">See More <span style='font-size:15px;'>&#10087;</span></button>
+                    <button class="btn btn-primary spec">See More <span style='font-size:15px;'>&#10087;</span></button>
                     </div>
                     <div class="card " >
-                        <img class="card-img-top" src="images/specialization.jpg" style="width:100%;height:200px">   
+                        <img class="card-img-top" src="images/dietTable Icon.png" style="width:100%;height:200px">   
                     <div class="card-body">
                         <h5 class="card-header">Diet tables</h5>
                         <p class="card-text">
@@ -110,7 +110,7 @@
                    </div>
                                                           
                     <div class=" card ">
-                        <img class="card-img-top" src="images/specialization.jpg" style="width:100%;height:200px">   
+                        <img class="card-img-top" src="images/donate us icon.png" style="width:100%;height:200px">   
                     <div class="card-body">
                         <h5 class="card-header">Donate us</h5>
                         <p class="card-text">
@@ -120,7 +120,7 @@
                     <button class="btn btn-primary">See More <span style='font-size:15px;'>&#10087;</span></button>
                    </div>
                    <div class="card ">
-                        <img class="card-img-top" src="images/specialization.jpg" style="width:100%;height:200px">   
+                       <img class="card-img-top" src="images/customerIcon.png" style="width:100%;height:200px">   
                     <div class="card-body">
                         <h5 class="card-header">Customer Support</h5>
                         <p class="card-text">
@@ -130,7 +130,7 @@
                     <button class="btn btn-primary">See More <span style='font-size:15px;'>&#10087;</span></button>
                    </div>
                     <div class="card" >
-                        <img class="card-img-top" src="images/specialization.jpg" style="width:100%;height:200px">   
+                        <img class="card-img-top" src="images/bodyStatistics.jpg" style="width:100%;height:200px">   
                     <div class="card-body">
                         <h5 class="card-header">Your Body Statistics</h5>
                         <p class="card-text">
@@ -325,7 +325,7 @@
                 </div>  
               <div class="appointmentContainer">
         <p style="font-size:20px;" class="mapper appointmentChoosingMapper"><span style="font-size:20px;margin-left:6px"></span>Go Back</p>                    
-                  <div class="appointmentContent">
+                  <div class="appointmentContent" data-min="">
                   </div>
               </div>
             <div class="myDoctorContainer">
@@ -343,6 +343,244 @@
                     </div>     
                 </div> 
           </div>
+                <div class="specContainer">
+                    <div class="specContent">
+                        <div class="SpecContainer">
+                            <div class="eyeSpec spec1 eyeLink"><img class='specImg ' src="images/eyeSpec.png" ></div>
+                            <div class="earSpec spec2"><img class='specImg ' src='images/earSpec.png'></div>
+                        </div>
+                        <div class="SpecContainer ">
+                            <div class="diabetesSpec spec1"><img class='specImg ' src='images/diabetesSpec.png'></div>
+                            <div class="boneSpec spec2"><img class='specImg ' src='images/boneSpec.png'></div>
+                        </div>
+                        <div class="SpecContainer">
+                            <div class="childSpec spec1"><img class='specImg' src='images/childSpec.png'></div>
+                            <div class="hairSpec spec2"><img class='specImg ' src='images/hairSpec.png'></div>
+                        </div>
+                        <div class="SpecContainer">
+                            <div class="phsyologicalSpec spec1"><img class='specImg ' src='images/psychologySpec.png'></div>
+                            <div class="physiotherapySpec spec2"><img class='specImg ' src='images/physioSpec.png'></div>
+                        </div>
+
+                    </div>
+                    <div class='specMainContent'>
+                        <div class='eyeSpecContent'>
+                            <h4>Eye</h4>
+                            <div class='heading1'>
+                                <div class='eyePara'>
+                                   <h4>What is Eye?</h4> 
+                                    To better understand a student’s vision, it is important to know how each part of the eye contributes to a person's ability to see. Each area of the eye has an important role and must function properly in order for the eye to function properly. The following is a quick lesson in the structure and functions of the eye.
+There are three ways areas, or underlying reasons for, a visual impairment. The first, there may be damage or a result of an injury to one or more parts of the eye essential to vision.  This damage may interfere with the way the eye receives or processes visual information. Second, the eyeball may be proportioned incorrectly (have different dimensions than usual), making it harder to focus on objects or may not have developed correctly. And finally, the part of the brain that processes visual information may not work properly.  The eye may be perfectly normal, but the brain is not able to analyze and interpret visual information so that the person can see.
+                                </div>
+                                <div class='eyePara'>
+                                    <h4>Parts of Eye</h4>
+                                    As part of the coursework for becoming certified as a Teacher of Students with Visual Impairments, it is necessary to take a class on the structure and function of the eye. Understanding the significance of each area of the eye can help a TVI understand the possible effects of various visual diagnosis.
+                                    <h5>1. Tear Layer</h5>
+The Tear Layer (The Lacrimal System) is the first layer of the eye that light strikes.  It is clear, moist, and salty.  Its purpose is to keep the eye smooth and moist.  
+<h5>2. Cornea</h5>
+The Cornea is the second structure that light strikes.  It is the clear, transparent front part of the eye that covers the iris, pupil and anterior chamber and provides most of an eye’s optical power (if too flat = hyperopia/farsightedness; if too steep = myopia/nearsightedness).  It needs to be smooth, round, clear, and tough. It is like a protective window. The function of the cornea is to let light rays enter the eye and converge the light rays.
+<h5>3. Anterior Chamber</h5>
+The Anterior Chamber is filled with Aqueous Humor.  Aqueous Humour is a clear, watery fluid that fills the space between the back surface of the cornea and the front surface of the vitreous, bathing the lens (The anterior and posterior chambers.  Both are located in the front part of the eye, in front of the lens).  The eye receives oxygen through the aqueous.  Its function is to nourish the cornea, iris, and lens by carrying nutrients, it removes waste products excreted from the lens, and maintain intraocular pressure and thus maintains the shape of the eye.  This gives the eye its shape.  It must be clear to function properly.
+<h5>4. Iris</h5>
+The iris is the pigmented tissue lying behind the cornea that gives color to the eye and controls the amount of light entering the eye by varying the size of the papillary opening.  It functions like a camera. The color of the iris affects how much light gets in.  The iris controls light constantly, adapts to lighting changes, and is responsible for near point reading (to see close, pupils must constrict)
+Pupil. It is a variable-sized black circular opening in the center of the iris that regulates the amount of light that enters the eye.  The pupil needs to be round in order to constrict.
+Constricted. A constricted pupil occurs when the pupil size is reduced to constriction of the iris or relaxation of the iris dilator muscle. The iris constricts with bright illumination, with certain drugs, and can be a consequence of ocular inflammation. 
+Dilated. A dilated pupil is an enlarged pupil, resulting from contraction of the dilator muscle or relaxation of the iris sphincter.  It occurs normally in dim illumination, or may be produced by certain drugs (mydriatics) or result from blunt trauma.
+<h5>5. Lens</h5>
+The lens is the natural lens of the eye (chrystaline lens).  Transparent, biconvex intraocular tissue that helps bring rays of light to focus on the retina (It bends light, but not as much as the cornea).  Suspended by fine ligaments (zonules) attached between ciliary processes. It has to be clear, has to have a power of about +16, and has to be pliable so it can control refraction (This becomes less pliable as you age leading to presbiopia).
+
+Ciliary Body. The circumferential tissue (a ring of tissue between the end of the choroids and the beginning of the iris) inside the eye composed of the ciliary muscle (involved in lens accommodation and control of intraocular pressure and thus the shape of the lens) and 70 ciliary processes that produce aqueous fluid.
+<h5>6. Vitreous Humour (Chamber)</h5>
+Vitreous Humour (Chamber) is the transparent, colorless gelatinous mass that fills rear two-thirds of the eyeball, between the lens and the retina.  It has to be clear so light can pass through it and it has to be there or eye would collapse.
+<h5>7. Retina</h5>
+The retina is the light sensitive nerve tissue in the eye that converts images from the eye’s optical system into electrical impulses that are sent along the optic nerve to the brain, to interpret as vision.  Forms a thin membranous lining of the rear two-thirds of the globe; consists of layers that include two types of cells: rods and cones.  There is no retina over the optic nerve which causes a blind spot (This is the sightless area within the visual field of a normal eye.  It is caused by absence of light sensitive photoreceptors where the optic nerve enters the eye.)
+Cones The cones are the light-sensitive retinal receptor cell that provides the sharp visual acuity (detail vision) and color discrimination; most numerous in macular area.  Function under bright lighting.
+Rods The light-sensitive, specialized retinal receptor cell that works at low light levels (night vision).  The rods function with movement and provide light/dark contrast.  It makes up peripheral vision.
+Macula It is the “yellow spot” in the small (3 °) central area of the retina surrounding the fovea.  It is the area of acute central vision (used for reading and discriminating fine detail and color). Within this area is the largest concentration of cones
+​Fovea The fovea is the central pit in the macula that produces the sharpest vision. It contains a high concentration of cones within the macula and no retinal blood vessels.
+<h5>8. Choroid</h5>
+The vascular (major blood vessel), central layer of the eye lying between the retina and sclera. Its function is to provide nourishment to the outer layers of the retina through blood vessels. It is part of the uveal tract.
+<h5>9. Sclera</h5>
+The sclera is the opaque, fibrous, tough, protective outer layer of the eye (“white of the eye”) that is directly continuous with the cornea in front and with the sheath covering the optic nerve behind. The sclera provides protection and form.
+<h5>10. Optic Nerve</h5>
+The Optic Nerve is the largest sensory nerve of the eye. It carries impulses for sight from the retina to the brain.  Composed of retinal nerve fivers that exit the eyeball through the optic disc, traverse the orbit, pass through the optic foramen into the cranial cavity, where they meet fibers from the other optic nerve at the optic chiasm.
+<h5>11. Extraocular Muscles</h5>
+There are six extraocular muscles in each eye:
+Rectus Muscles. There are four Rectus muscles that are responsible for straight movements: Superior (upward), Inferior (lower), Lateral (toward the outside, or away from the nose), and Medial (toward the inside, or toward the nose). 
+Oblique Muscles. There are two Oblique muscles that are responsible for angled movements. The superioroblique muscles control angled movements upward toward the right or left. Inferior oblique muscles control angled movements downward toward the right or left.
+<h4>Common Problems and Remedies</h4>
+Most people have eye problems at one time or another. Some are minor and will go away on their own, or are easy to treat at home. Others need a specialist’s care.
+
+Whether your vision isn’t what it used to be, or never was that great, there are things you can do to get your eye health back on track.
+
+See if any of these common problems sound familiar. And always check with a doctor if your symptoms are really bad or don’t clear up within a few days.
+
+<h5>Eyestrain</h5>
+Anyone who reads for hours, works at a computer, or drives long distances knows about this one. It happens when you overuse your eyes. They get tired and need to rest, just like any other part of your body.
+
+If your eyes feel strained, give them some time off. If they’re still weary after a few days, check with your doctor to make sure it isn’t another problem.
+
+<h5>Red Eyes</h5>
+Your eyes look bloodshot. Why?
+
+Their surface is covered in blood vessels that expand when they’re irritated or infected. That gives your eyes the red look.
+
+Eyestrain can do it, and so can a late night, a lack of sleep, or allergies. If an injury is the cause, get it checked by your doctor.
+
+Red eyes could be a symptom of another eye condition, like conjunctivitis (pinkeye) or sun damage from not wearing shades over the years. If over-the-counter eye drops and rest don’t clear it up, see your doctor.
+
+<h5>Night Blindness</h5>
+Is it hard to see at night, especially while driving? Is it tough to find your way around in dark places, such as movie theaters?
+
+That sounds like night blindness. It’s a symptom, not a problem in its own right. Nearsightedness, cataracts, keratoconus, and a lack of vitamin A all cause a type of night blindness that doctors can fix.
+
+Some people are born with this problem, or it might develop from a degenerative disease involving the retina, and that usually can’t be treated. If you have it, you’ll need to be extra careful in areas of low light.
+
+<h5>Lazy Eye</h5>
+Lazy eye, or amblyopia, happens when one eye doesn’t develop properly. Vision is weaker in that eye, and it tends to move “lazily” around while the other eye stays put. It’s found in infants, children, and adults, and rarely affects both eyes. Treatment needs to be sought immediately for infants and children.
+
+Lifelong vision problems can be avoided if a lazy eye is detected and treated during early childhood. Treatment includes corrective glasses or contact lenses and using a patch or other strategies to make a child use the lazy eye.
+
+<h5>Cross Eyes (Strabismus) and Nystagmus</h5>
+If your eyes aren’t lined up with each other when you look at something, you could have strabismus. You might also hear it called crossed eyes or walleye.
+
+This problem won’t go away on its own. You’ll need to get an ophthalmologist, or eye specialist, to correct it.
+
+With nystagmus, the eye moves or "jiggles" all the time on its own. 
+
+There are many treatments, including vision therapy to make your eyes stronger. Surgery is also an option. Your doctor will examine your eyes to see which treatment might work best for you.
+
+<h5>Colorblindness</h5>
+When you can’t see certain colors, or can’t tell the difference between them (usually reds and greens), you may be colorblind. It happens when the color cells in your eye (the doctor will call them cone cells) are absent or don’t work.
+
+When it’s most severe, you can only see in shades of gray, but this is rare. Most people who have it are born with it, but you can get it later in life from certain drugs and diseases. Your doctor can tell you what’s to blame. Men are much more likely to be born with it than women.
+
+Your eye doctor can diagnose it with a simple test. There’s no treatment if you’re born with it, but special contacts and glasses can help some people tell the difference between certain colors.
+
+<h5>Uveitis</h5>
+This is the name for a group of diseases that cause inflammation of the uvea. That’s the middle layer of the eye that contains most of the blood vessels.
+
+These diseases can destroy eye tissue, and even cause eye loss. People of all ages can have it. Symptoms may go away quickly or last for a long time.
+
+People with immune system conditions like AIDS, rheumatoid arthritis, or ulcerative colitis may be more likely to have uveitis. Symptoms may include:
+<ul>
+<li>Blurred vision</li>
+<li>Eye pain</li>
+<li>Eye redness</li>
+<li>Light sensitivity</li>
+</ul>
+See your doctor if you have these symptoms and they don’t go away within a few days. There are different kinds of treatment for uveitis, depending on the type you have.
+
+<h5>Presbyopia</h5>
+This happens when you lose the ability, despite good distance vision, to clearly see close objects and small print.
+
+After age 40 or so, you may have to hold a book or other reading material farther away from your eyes to make it easier to read. Sort of like your arms are too short.
+
+Reading glasses, contact lenses, LASIK, which is laser eye surgery, and other procedures can be used to restore good reading vision.
+
+<h5>Floaters</h5>>
+These are tiny spots or specks that float across your field of vision. Most people notice them in well-lit rooms or outdoors on a bright day.
+
+Floaters are usually normal, but they sometimes can be a sign of a more serious eye problem, like retinal detachment. That’s when the retina at the back of your eye separates from the layer underneath. When this happens, you might also see light flashes along with the floaters or a dark shadow come across the edge of your sight.
+
+If you notice a sudden change in the type or number of spots or flashes you see or a new dark “curtain" in your peripheral vision, go to your eye doctor as soon as possible.
+
+<h5>Dry Eyes</h5>
+This happens when your eyes can't make enough good-quality tears. You might feel like something is in your eye or like it’s burning. Rarely, in severe cases, extreme dryness can lead to some loss of vision. Some treatments include:
+
+Using a humidifier in your home
+<ul>
+<li>Special eye drops that work like real tears</li>
+<li>Plugs in your tear ducts to lessen drainage</li>
+<li>Lipiflow, a procedure that uses heat and pressure to treat dry eyes<li>
+<li>Testosterone eyelid cream<li>
+<li>Nutritional supplements with fish oil and omega-3</li>
+<li>If your dry eye problem is chronic, you may have dry eye disease. You doctor could prescribe medicated drops like cyclosporine (Cequa, Restasis) or lifitegrast (Xiidra) to stimulate tear production.</li>
+</ul>
+<h5>Excess Tearing</h5>
+It has nothing to do with your feelings. You might be sensitive to light, wind, or temperature changes. Try to protect your eyes by shielding them or wearing sunglasses (go for wraparound frames -- they block more wind than other types).
+
+Tearing may also signal a more serious problem, like an eye infection or a blocked tear duct. Your eye doctor can treat or correct both of these conditions.
+
+<h5>Cataracts</h5>
+These are cloudy areas that develop in the eye lens.
+
+A healthy lens is clear like a camera's. Light passes through it to your retina -- the back of your eye where images are processed. When you have a cataract, light can't get through as easily. The result: You can't see as well and may notice glare or a halo around lights at night.
+
+Cataracts often form slowly. They don't cause symptoms like pain, redness, or tearing in the eye.
+
+Some stay small and don't affect your sight. If they do progress and affect your vision, surgery almost always works to bring it back.
+
+<h5>Glaucoma</h5>
+Your eye is like a tire: Some pressure inside it is normal and safe. But levels that are too high can damage your optic nerve. Glaucoma is the name for a group of diseases that cause this condition.
+
+A common form is primary open angle glaucoma. Most people who have it don’t have early symptoms or pain. So it's important to keep up with your regular eye exams.
+
+It doesn’t happen often, but glaucoma can be caused by:
+
+<h5>An injury to the eye</h5>
+<ul><li>Blocked blood vessels</li>
+<li>Inflammatory disorders of the eye</li>
+<li>Treatment includes prescription eye drops or surgery.</li></ul>
+
+<h5>Retinal Disorders</h5>
+The retina is a thin lining on the back of your eye that is made up of cells that collect images and pass them on to your brain. Retinal disorders block this transfer. There are different types:
+<ul>
+<li>Age-related macular degeneration refers to a breakdown of a small portion of the retina called the macula.</li>
+<li>Diabetic retinopathy is damage to the blood vessels in your retina caused by diabetes.</li>
+<li>Retinal detachment happens when the retina separates from the layer underneath.</li>
+<li>It’s important to get an early diagnosis and have these conditions treated.</li>
+</ul>
+<h5>Conjunctivitis (Pinkeye)</h5>
+In this condition, tissue that lines the back of your eyelids and covers your sclera gets inflamed. It can cause redness, itching, burning, tearing, discharge, or a feeling that something is in your eye.
+
+People of all ages can get it. Causes include infection, exposure to chemicals and irritants, or allergies.
+
+Wash your hands often to lower your chance of getting it.
+
+<h5>Corneal Diseases</h5>
+The cornea is the clear, dome-shaped "window" at the front of your eye. It helps to focus the light that comes in. Disease, infection, injury, and exposure to toxins can damage it. Signs include:
+
+<ul>
+<li>Red eyes</li>
+<li>Watery eyes</li>
+<li>Pain</li>
+<li>Reduced vision, or a halo effect</li></ul>
+The main treatment methods include:
+<ul>
+<li>A new eyeglasses or contacts prescription</li>
+<li>Medicated eye drops</li>
+<li>Surgery</li>
+</ul> 
+
+<h5>Eyelid Problems</h5>
+Your eyelids do a lot for you. They protect your eye, spread tears over its surface, and limit the amount of light that can get in.
+
+Pain, itching, tearing, and sensitivity to light are common symptoms of eyelid problems. You might also have blinking spasms or inflamed outer edges near your eyelashes.
+
+Treatment could include proper cleaning, medication, or surgery.
+
+<h5>Vision Changes</h5>
+As you get older, you may find that you can’t see as well as you once did. That’s normal. You’ll probably need glasses or contacts. You may choose to have surgery (LASIK) to correct your vision. If you already have glasses, you may need a stronger prescription.
+
+Other, more serious conditions also happen as you age. Eye diseases like macular degeneration, glaucoma, and cataracts, can cause vision problems. Symptoms vary a lot among these disorders, so keep up with your eye exams.
+
+Some vision changes can be dangerous and need immediate medical care. Anytime you have a sudden loss of vision, or everything looks blurry -- even if it’s temporary -- see a doctor right away. Go to the emergency room or call 911.
+
+<h5>Problems With Contact Lenses</h5>
+They work well for many people, but you need to take care of them. Wash your hands before you touch them. Follow the care guidelines that came with your prescription. And follow these rules:
+<ul>
+<li>Never wet them by putting them in your mouth. That can make an infection more likely.</li>
+<li>Make sure your lenses fit properly, so they don’t scratch your eyes.</li>
+<li>Use eye drops that say they're safe for contact lenses.</li>
+<li>Never use homemade saline solutions. Even though some lenses are FDA-approved for sleeping in them, doing so raises the risk of a serious infection.</li>
+<li>If you do everything right and still have problems with your contacts, see your eye doctor. You might have allergies, dry eyes, or just be better off with glasses. Once you know what the problem is, you can decide what’s best for you.</li>
+</ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>      
          </div> 
        
         <script>
@@ -629,6 +867,22 @@
                   $(".appointmentContainer").css("display","none");
                   $(".myDoctorContainer").css("display","none");
                   
+              });
+              $(".spec").on("click",function(){
+                  $(".cardDecker").css("display","none");
+                  $(".menuHeaderContent").html("Know more about specialization");
+                  $(".specializationContainer").css("display","none");
+                  $(".placeSearcher").val("select");
+                  $(".hospitalContent").html("");
+                  $(".hospitalContainer").css("display","none");
+                  $(".doctorContainer").css("display","none");                  
+                  $(".appointmentContainer").css("display","none");
+                  $(".myDoctorContainer").css("display","none");
+                  $(".specContainer").css("display","block");
+              });
+              $(".eyeLink").on("click",function(){
+                 $(".specMainContent").css("display","block");
+                 $(".specContent").css("display","none");
               });
                var specializationName="";
              $(".option").on("click",function(){
@@ -1093,7 +1347,7 @@
                                                      <p class='docName"+appointmentDeatilArray[9]+"'id='"+appointmentDeatilArray[0]+"'>Name : "+appointmentDeatilArray[0]+"</p>   \n\
                                                      <p>Address : "+appointmentDeatilArray[1]+"</p>   \n\
                                                      <p>Place_of_working : "+appointmentDeatilArray[2]+"</p>   \n\
-                                                     <p>Email : "+appointmentDeatilArray[3]+"\n\
+                                                     <p >Email : "+appointmentDeatilArray[3]+"\n\
                                                      <p>Phone Number : "+appointmentDeatilArray[4]+"</p>   \n\
    \n\                                               <p>Gender : "+appointmentDeatilArray[5]+"</p>   \n\
    \n\                                               <p>Specialization : "+appointmentDeatilArray[6]+"</p>   \n\
@@ -1129,16 +1383,20 @@
                              }
                              
                              }
-                             else
-                             {
-                                 $(".appointmentContent").html("Sorry Currently No Appointment Now");
-                                 $(".appointmentContent").css("font-size","20px");
-                                 $(".appointmentContent").css("text-align","center");
-
-                             }
                          }
                      });                   
                  });
+                    setInterval(function(){
+                        var text=$(".appointmentContent").text();
+                        if(text.includes("Doctor Details")==false)
+                        { 
+                            $(".appointmentContent").html("Sorry Currently No Appointments!!!<br>");
+                            $(".appointmentContent").css("font-size","20px");
+                            $(".appointmentContent").css("text-align","center");   
+                            $(".appointmentContent").append("<img src='images/noOption.webp'>");
+
+                        }
+                    },500);
                  var cancelButton;
                    setInterval(function(){
                        
@@ -1166,7 +1424,8 @@
                       var docImageArray1=new Array();
                      var docDeatailArray1=new Array();
                      var appointmentDeatilArray1=new Array();
-                     $.ajax({
+                    setInterval(function(){
+                       $.ajax({
                              type:"POST",
                              url:"appointmentController",
                              data:{
@@ -1179,9 +1438,14 @@
                                          docDeatailArray1=data.split("|");
                                          $(".docnotifiactions").html(""+docDeatailArray1.length-1+"");
                                      }
+                                     else
+                                     {
+                                         $(".docnotifiactions").html("");    
+                                     }
                                }
                              });
-                          
+                        
+                    },500);    
                     $(".doctorLink").on("click",function(){
                         $(".appointmentContainer").css("display","none");
                          $(".profileContainer").css("display","none");
@@ -1225,7 +1489,7 @@
                                                      <p class='docName"+appointmentDeatilArray1[9]+"'id='"+appointmentDeatilArray1[0]+"'>Name : "+appointmentDeatilArray1[0]+"</p>   \n\
                                                      <p>Address : "+appointmentDeatilArray1[1]+"</p>   \n\
                                                      <p>Place_of_working : "+appointmentDeatilArray1[2]+"</p>   \n\
-                                                     <p>Email : "+appointmentDeatilArray1[3]+"\n\
+                                                     <p class='email"+appointmentDeatilArray1[9]+"' id='"+appointmentDeatilArray1[3]+"'>Email : "+appointmentDeatilArray1[3]+"\n\
                                                      <p>Phone Number : "+appointmentDeatilArray1[4]+"</p>   \n\
    \n\                                               <p>Gender : "+appointmentDeatilArray1[5]+"</p>   \n\
    \n\                                               <p>Specialization : "+appointmentDeatilArray1[6]+"</p>   \n\
@@ -1283,12 +1547,6 @@
                                        }
                                    });      
                               }  
-                              else
-                              {
-                                $(".fixedDoctorDetails").html("Sorry Currently No Appointments!!!");
-                                $(".fixedDoctorDetails").css("font-size","20px");
-                                $(".fixedDoctorDetails").css("text-align","center");                              
-                              }
                           }
                           
                               
@@ -1296,9 +1554,18 @@
                               
                           
                     });
+                    setInterval(function(){
+                        var text=$(".docDetailContainer1").text();
+                        if(text.includes("Doctor Details")===false)
+                        { 
+                            $(".fixedDoctorDetails").html("Sorry Currently No Appointments!!!<br>");
+                            $(".fixedDoctorDetails").css("font-size","20px");
+                            $(".fixedDoctorDetails").css("text-align","center"); 
+                            $(".fixedDoctorDetails").append("<img src='images/noOption.webp'>");
+                        }
+                    },500);
                     $(document).on("click",".Note",function(){
                         var presId=$(this).attr("id");
-                        alert(presId);
                        $(".fixedDoctorDetails").css("display","none");
                        $(".noteContainer").css("display","block");
                        $(".noteContainer").html("\n\
@@ -1402,7 +1669,6 @@
                             function:"saving"
                         },
                         success: function (data, textStatus, jqXHR) {
-                            alert(data);
                             if(data==="true")
                             {
                                 $(".detailsMessanger").fadeIn(1000).css("display","block");
@@ -1416,7 +1682,14 @@
                  });   
                 $(document).on("click",".RemoveButton1",function(){
                     var remove=$(this).attr("id");
-                     getMailData(remove,"cancel");
+                    var email1=$(".email"+remove).attr("id");
+                    var docName=$(".docName"+remove).attr("id");
+                    var AppoTime=$(".AppoTime"+remove).attr("id");
+                    var AppoDate=$(".AppoDate"+remove).attr("id");
+                    console.log(email);
+                    console.log(docName);
+                    console.log(AppoTime);
+                    console.log(AppoDate);
                     $.ajax({
                         type:"POST",
                         url:"AppointmentFixerandCancelerController",
@@ -1431,6 +1704,9 @@
                                   $("#"+remove).css("display","none"); 
                                   next();
                                }); 
+                               $(".docDetailContainer1").html("");
+                               sendEmail(email1,"cancel",userName,docName,"doctor",AppoDate,AppoTime,"Appointment");
+                               sendEmail(email,"cancel",userName,docName,"patient",AppoDate,AppoTime,"Appointment");
                             }
                         }
                         
@@ -1441,9 +1717,11 @@
                     var docName=$(".docName"+remove).attr("id");
                     var AppDate=$(".AppoDate"+remove).attr("id");
                     var AppTime=$(".AppoTime"+remove).attr("id");
+                    var email1=$(".email"+remove).attr("id");
                     console.log(docName);
                     console.log(AppDate);
                     console.log(AppTime);
+                    console.log(email1);
                     $.ajax({
                         type:"POST",
                         url:"AppointmentFixerandCancelerController",
@@ -1459,6 +1737,7 @@
                                   next();
                                }); 
                                sendEmail(email,"cancel",userName,docName,"patient",AppDate,AppTime,"Appointment");
+                               $(".docDetailContainer").html("");
                             }
                             else
                             {
