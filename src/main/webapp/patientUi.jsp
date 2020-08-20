@@ -364,7 +364,8 @@
 
                     </div>
                     <div class='specMainContent'>
-                        
+                        <p style="font-size:20px;" class="mapper1 mainPageMapper"><span style="font-size:20px;margin-left:6px"></span>Go Back</p>
+ 
                       </div>
                     </div>
                 </div>      
@@ -418,9 +419,9 @@
             });
             $(document).ready(function(){
                 $.ajax({
-                    url:"newhtml.html",
+                    url:"specContentLoader.html",
                     success: function (data, textStatus, jqXHR) {
-                        $(".specMainContent").html(data);
+                        $(".specMainContent").append(data);
                         alert(data);
                     }
                     })
