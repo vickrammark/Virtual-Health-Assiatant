@@ -812,26 +812,39 @@ btn
    height:100%;
    width:100%;
 }
-.eyeSpecContent
+.eyeSpecContent,.earSpecContent,.diabetesSpecContent,.boneSpecContent,.childSpecContent,.hairSpecContent,.physiotherapySpecContent,.phsyologicalSpecContent
 {
    height:100%;
    width:100%;    
    color:black;
-   padding:15px; 
+   padding:40px; 
+   overflow-y:scroll;
+   overflow-x:hidden; 
 }
 h4
 {
-margin:10px;     
+margin:20px;
+margin-top:42px; 
 text-align:center; 
+padding:20px; 
 }
 h5
 {
-   margin:20px;  
+   margin:25px;  
+   margin-top: 42px;
+   padding: 20px;
 }
 .specImg:hover
 {
    transform:scale(1.1);  
    cursor:pointer; 
+}
+.mapper1
+{
+   background-color:transparent;
+   cursor:pointer;
+   box-shadow:0px 0px 10px 5px rgba(0,0,0,0.2);
+   margin:10px; 
 }
 .spec1
 {
@@ -855,6 +868,12 @@ h5
     border-right:1px solid white; 
     border-bottom-right-radius:15px; 
     border-top-right-radius:15px;
+}
+.bone
+{
+   margin:20px;
+   width:400px;
+   height:300px;
 }
 @media only screen and (max-width: 600px) {
      .menuList
